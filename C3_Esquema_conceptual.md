@@ -2,7 +2,7 @@
 
 Modelo E/A 
 
-![](Aspose.Words.e4f782d3-1e2a-49e5-b6a2-e3a3c1acce71.001.jpeg)
+![](https://i.ibb.co/GMm8N8r/EA-M2.png)
 
 Modelo Relacional 
 
