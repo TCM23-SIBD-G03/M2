@@ -63,13 +63,13 @@ DISTRUBUIDORAS (nome, telefone, tipoProdutos, dadosPagamento (NIPC, IBAN))
 •	dadosPagamento: Dados para se poder pagar ás distribuidoras (NIPC, IBAN) (Chave Primária).
 
 ### **Associações**:
-O armazém  \_armazena \_ produtos;
-A notas de encomendas  \_são efetuadas \_ pelo armazém.
-Supermercado faz  \_pedidos \_ ao armazém 
-As notas de encomenda contem \_produtos \_ e informação do respetivo distribuidor.
-Os supermercados  \_contem \_ produtos
-O cliente pode estar  \_associado \_ a um cartão cliente
-Um empregado  \_administra \_ um supermercado
+* O armazém  \_armazena \_ produtos;
+* A notas de encomendas  \_ são efetuadas  pelo armazém.
+* Supermercado faz  \_pedidos \_ ao armazém 
+* As notas de encomenda contem \_produtos \_ e informação do respetivo distribuidor.
+* Os supermercados  \_contem \_ produtos
+* O cliente pode estar  \_associado \_ a um cartão cliente
+* Um empregado  \_administra \_ um supermercado
 
 
 
