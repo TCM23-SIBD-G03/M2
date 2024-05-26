@@ -2,12 +2,11 @@
 
 
 ## Descrição do trabalho
-O objetivo do nosso trabalho é desenvolver um sistema de informação para uma pequena cadeia de supermercados situados na área da Maia como o objetivo de melhorar a sua logística, dados dos empregados e clientes. Essa cadeia é alimentada por um armazém central que tem como objetivo armazenar e distribuir (conforme as encomendas pedidas) produtos por cada um dos supermercados e receber stock dos distribuidores.
-O armazém apresenta um responsável pela organização de cada secção de produto (cosméticos, congelados, bebidas, cereais). Cada departamento necessita de um empregado para o seu funcionamento. Cada supermercado é responsável por fazer pedidos de produtos ao armazém. O supermercado tem um determinado número de empregados, dos quais um é o gerente. 
+O objetivo do nosso trabalho é desenvolver um sistema de informação para uma pequena cadeia de supermercados situados na área da Maia como o objetivo de melhorar a sua logística, dados dos empregados,produtos que vendem e encomendas pedidas por cada supermecado. Essa cadeia é alimentada por um armazém central que tem como objetivo armazenar e distribuir (conforme as encomendas pedidas) produtos por cada um dos supermercados e receber stock dos distribuidores.
+O armazém apresenta um responsável pela organização de cada secção de produto (cosméticos, congelados, bebidas, cereais). Cada departamento necessita de um empregado para o seu funcionamento. Cada supermercado e responsável por fazer pedidos de produtos ao armazém. O supermercado tem um determinado número de empregados, dos quais um é o gerente. 
 Assim conclui-se que cada empregado está associado a um departamento.
-
 O sistema de informação necessita guardar dados das distribuidoras afiliadas para realizar notas de encomendas (as notas de encomenda contem produtos quantidade de cada produto) com o objetivo de reposição do inventário do armazém. As notas de encomenda são realizadas pelo armazém.
-É possível a fidelização de clientes através do cartão cliente que permite a empresa execute determinadas ações futuras.
+
 
 
 
@@ -48,7 +47,7 @@ CLIENTE (nome, morada, dataNascimento, sexo, telefone, e-mail, id)
 *	E-mail: E-mail de cada cliente.
 *	ID: Número identificador exclusivo para cada cliente (Chave Primária).
 
-PRODUTOS (ID, nome, preço, categoria, quantidadeStock, dataExpiracao) 
+PRODUTOS (ID, nome, preço, tipodeProdutos, quantidadeStock, dataExpiracao) 
 *	ID: Número identificador exclusivo para cada produto (Chave Primária).
 *	Nome: Nome de cada produto
 *	Preço: Preço de cada produto
