@@ -17,50 +17,50 @@ O sistema de informação necessita guardar dados das distribuidoras afiliadas p
 ### **Entidades**:
   
   ARMAZEM (MoradaArmazem (rua, numeroDePorta, freguesia), NumEmpregadosArmazem, ArmazemID)
-•	Morada: Morada do armazém constituída por uma rua, número de porta e freguesia.
-•	NumEmpregados: Número de empregados que trabalham num armazém
-•	ArmazemID: Número identificador exclusivo para cada armazém (Chave Primária)
+*	Morada: Morada do armazém constituída por uma rua, número de porta e freguesia.
+*	NumEmpregados: Número de empregados que trabalham num armazém
+*	ArmazemID: Número identificador exclusivo para cada armazém (Chave Primária)
 
 PEDIDO (PedidoID, NumProdutos, DataExecucao)
-•	PedidoID: Número identificador exclusivo para cada pedido (Chave Primária)
-•	DataExecucao: Data de distribuição do pedido
+*	PedidoID: Número identificador exclusivo para cada pedido (Chave Primária)
+*	DataExecucao: Data de distribuição do pedido
 
 SUPERMERDADO (SupermercadoID, MoradaSupermercado (rua, numeroDePorta, freguesia), NumEmpregadosSuper)
-•	SupermercadoID: Número identificador exclusivo para cada supermercado (Chave Primária)
-•	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
-•	NumEmpregadosSuper: Número de empregados em cada supermercado.
+*	SupermercadoID: Número identificador exclusivo para cada supermercado (Chave Primária)
+*	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
+*	NumEmpregadosSuper: Número de empregados em cada supermercado.
 
 EMPREGADOS (HorasDeServiço, NomeEmpregado, EmpregadoID, sexo, endereço, salario, dataNascimento)
-•	HorasDeServiço: Horas de serviço de cada empregado.
-•	NomeEmpregado: Nome completo de cada empregado.
-•	EmpregadoID: Número identificador exclusivo para cada empregado. (Chave Primária)
-•	Sexo: Género de cada empregado.
-•	Endereço: Morada de cada empregado
-•	Salario: Salário de cada empregado
-•	dataNascimento: Data de nascimento de cada empregado.
+*	HorasDeServiço: Horas de serviço de cada empregado.
+*	NomeEmpregado: Nome completo de cada empregado.
+*	EmpregadoID: Número identificador exclusivo para cada empregado. (Chave Primária)
+*	Sexo: Género de cada empregado.
+*	Endereço: Morada de cada empregado
+*	Salario: Salário de cada empregado
+*	dataNascimento: Data de nascimento de cada empregado.
 
 CLIENTE (nome, morada, dataNascimento, sexo, telefone, e-mail, id)
-•	Nome: nome de cada cliente
-•	Morada: morada de cada cliente
-•	dataNascimento: Data de nascimento de cada cliente.
-•	Sexo: Género de cada cliente
-•	Telefone: Número de telefone de cada cliente
-•	E-mail: E-mail de cada cliente.
-•	ID: Número identificador exclusivo para cada cliente (Chave Primária).
+*	Nome: nome de cada cliente
+*	Morada: morada de cada cliente
+*	dataNascimento: Data de nascimento de cada cliente.
+*	Sexo: Género de cada cliente
+*	Telefone: Número de telefone de cada cliente
+*	E-mail: E-mail de cada cliente.
+*	ID: Número identificador exclusivo para cada cliente (Chave Primária).
 
 PRODUTOS (ID, nome, preço, categoria, quantidadeStock, dataExpiracao) 
-•	ID: Número identificador exclusivo para cada produto (Chave Primária).
-•	Nome: Nome de cada produto
-•	Preço: Preço de cada produto
-•	Categoria: Categoria de cada produto
-•	QuantidadeStock: quantidade de stock de cada produto
-•	dataExpiração: Data que um determinado produto expira (depende da categoria do produto).
+*	ID: Número identificador exclusivo para cada produto (Chave Primária).
+*	Nome: Nome de cada produto
+*	Preço: Preço de cada produto
+*	Categoria: Categoria de cada produto
+*	QuantidadeStock: quantidade de stock de cada produto
+*	dataExpiração: Data que um determinado produto expira (depende da categoria do produto).
 
 DISTRUBUIDORAS (nome, telefone, tipoProdutos, dadosPagamento (NIPC, IBAN))
-•	Nome: Nome da distribuidora
-•	Telefone: Número de telefone de uma distribuidora
-•	tipoProdutos: Tipo de produtos que distribuem
-•	dadosPagamento: Dados para se poder pagar ás distribuidoras (NIPC, IBAN) (Chave Primária).
+*	Nome: Nome da distribuidora
+*	Telefone: Número de telefone de uma distribuidora
+*	tipoProdutos: Tipo de produtos que distribuem
+*	dadosPagamento: Dados para se poder pagar ás distribuidoras (NIPC, IBAN) (Chave Primária).
 
 ### **Associações**:
 * O armazém **armazena** produtos;
