@@ -8,12 +8,12 @@
 :[Esquema Relacional](rebd04.md)  
 :[SQL](rebd05.md)  
 
-## Group _xx_
+## Group 03
 
-_(Don't forget to add the group elements)_
 
-* Marco Amaro Oliveira [@MarcoOliveira](https://github.com/marcoamarooliveira)
-* Other team members
+* Filipe Oliveira [@FilipeOliveira](https://github.com/FilipeVilela280)
+* João Pinho[@JoãoPinho]
+* Pedro Antunes [@PedroAntunes]
 
 ---
 _You can add a footer menu for navigation_ 
