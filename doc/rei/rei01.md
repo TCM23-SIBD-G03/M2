@@ -7,7 +7,7 @@ O armazém apresenta um responsável pela organização de cada secção de prod
 Assim conclui-se que cada empregado está associado a um departamento.
 
 O sistema de informação necessita guardar dados das distribuidoras afiliadas para realizar notas de encomendas (as notas de encomenda contem produtos quantidade de cada produto) com o objetivo de reposição do inventário do armazém. As notas de encomenda são realizadas pelo armazém.
-É possível a fidelização de clientes através do cartão cliente que permite a empresa execute determinadas ações.
+É possível a fidelização de clientes através do cartão cliente que permite a empresa execute determinadas ações futuras.
 
 
 
@@ -63,13 +63,13 @@ DISTRUBUIDORAS (nome, telefone, tipoProdutos, dadosPagamento (NIPC, IBAN))
 •	dadosPagamento: Dados para se poder pagar ás distribuidoras (NIPC, IBAN) (Chave Primária).
 
 ### **Associações**:
-* O armazém  \_armazena \_ produtos;
-* A notas de encomendas  \_ são efetuadas  pelo armazém.
-* Supermercado faz  \_pedidos \_ ao armazém 
-* As notas de encomenda contem \_produtos \_ e informação do respetivo distribuidor.
-* Os supermercados  \_contem \_ produtos
-* O cliente pode estar  \_associado \_ a um cartão cliente
-* Um empregado  \_administra \_ um supermercado
+* O armazém **armazena** produtos;
+* A notas de encomendas **são efetuadas** pelo armazém.
+* Supermercado faz **pedidos** ao armazém 
+* As notas de encomenda contem **produtos** e informação do respetivo distribuidor.
+* Os supermercados **contem** produtos
+* O cliente pode estar **associado** a um cartão cliente
+* Um empregado **administra** um supermercado
 
 
 
