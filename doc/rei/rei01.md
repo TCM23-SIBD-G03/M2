@@ -2,10 +2,17 @@
 
 
 ## Descrição do trabalho
-O objetivo do nosso trabalho é desenvolver um sistema de informação para uma pequena cadeia de supermercados situados na área da Maia como o objetivo de melhorar a sua logística, dados dos empregados,produtos que vendem e encomendas pedidas por cada supermecado. Essa cadeia é alimentada por um armazém central que tem como objetivo armazenar e distribuir (conforme as encomendas pedidas) produtos por cada um dos supermercados e receber stock dos distribuidores.
-O armazém apresenta um responsável pela organização de cada secção de produto (cosméticos, congelados, bebidas, cereais). Cada departamento necessita de um empregado para o seu funcionamento. Cada supermercado e responsável por fazer pedidos de produtos ao armazém. O supermercado tem um determinado número de empregados, dos quais um é o gerente. 
-Assim conclui-se que cada empregado está associado a um departamento.
-O sistema de informação necessita guardar dados das distribuidoras afiliadas para realizar notas de encomendas (as notas de encomenda contem produtos quantidade de cada produto) com o objetivo de reposição do inventário do armazém. As notas de encomenda são realizadas pelo armazém.
+* O objetivo do nosso trabalho é desenvolver um sistema de gestão para uma pequena cadeia de supermercados situados na área da Maia como o objetivo de melhorar a sua logística, e organização de dados.
+
+* Cada supermercado emprega mais de que um  empregado e esse só pode trabalhar para apenas um dos supermercados. Dos empregados que trabalham para um supermercado ,um deles é responsável pela gerência do supermercado e fundamental para o correto funcionamento do mesmo. 
+Deve ser possível na Base de dados, armazenar o salario ,sexo , morada, data de nascimento e numero de telemóvel de cada emprega, e cada um tem deve ter um ID associado.
+* Também e necessário ter acesso  aos produtos que cada supermercado vende, uma vez que cada supermercado pode vender uma maior variedade de produtos ou até mesmo vender produtos diferentes. O produto é caracterizados por um, nome ,código de produto ,produtor e o preço atual e cada um deve pertencer a um tipo de produto ,para permitir uma melhor gestão dos diferentes produtos do mesmo tipo que os supermercados vendem e dos fornecedores dos diferentes tipos de produtos.
+
+* Os fornecedores que fornecem produtos aos supermercados podem fornecer diferentes tipos de produtos, ou fornecer apenas um tipo de produto.
+
+* Também e possível aos clientes ,tornarem-se afiliados ao aderirem ao cartão cliente para poderem beneficiar de acumulação de pontos na compra de uma certa quantidade de produtos,  caso apresentem o cartão no momento de compra  . Para criar o cartão os clientes tem de fornecer, morada , numero de telemóvel ,email, nome e será atribuído um id a cada cliente.
+Logo é necessário armazenar a data de compra, quantidade e o produto comprado de cada cliente de forma a se poder consultar a compras feitas por um cliente afiliado.
+
 
 
 
@@ -15,19 +22,13 @@ O sistema de informação necessita guardar dados das distribuidoras afiliadas p
 
 ### **Entidades**:
   
-  ARMAZEM (MoradaArmazem (rua, numeroDePorta, freguesia), NumEmpregadosArmazem, ArmazemID)
-*	Morada: Morada do armazém constituída por uma rua, número de porta e freguesia.
-*	NumEmpregados: Número de empregados que trabalham num armazém
-*	ArmazemID: Número identificador exclusivo para cada armazém (Chave Primária)
 
-PEDIDO (PedidoID, NumProdutos, DataExecucao)
-*	PedidoID: Número identificador exclusivo para cada pedido (Chave Primária)
-*	DataExecucao: Data de distribuição do pedido
 
-SUPERMERDADO (SupermercadoID, MoradaSupermercado (rua, numeroDePorta, freguesia), NumEmpregadosSuper)
+
+SUPERMERDADO (\_SupermercadoID\_, Morada (rua, numeroDePorta, freguesia))
 *	SupermercadoID: Número identificador exclusivo para cada supermercado (Chave Primária)
 *	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
-*	NumEmpregadosSuper: Número de empregados em cada supermercado.
+
 
 EMPREGADOS (HorasDeServiço, NomeEmpregado, EmpregadoID, sexo, endereço, salario, dataNascimento)
 *	HorasDeServiço: Horas de serviço de cada empregado.
