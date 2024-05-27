@@ -3,7 +3,7 @@
 ## Modelo E/A
 
   
-![Modelo EA Supermecados](images/Supermecado.png)   
+![Modelo EA Supermecados](doc/rei/images/Supermecado.png)   
 
 ### **Entidades**:
   
