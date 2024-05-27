@@ -7,7 +7,7 @@ O objetivo do nosso trabalho é desenvolver um sistema de informação para uma 
 ## Repository organization
 
 
-* **Source code** is in the [src folder](src/).
+* Relatorios na pasta:[src folder](src/).
 * Reports are in [doc folder](doc/).
 
 ## Gallery
