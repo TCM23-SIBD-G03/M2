@@ -12,8 +12,8 @@ O objetivo do nosso trabalho é desenvolver um sistema de informação para uma 
 
 ## Gallery
 
+![Modelo EA Supermecados](images/Supermecado.png)   
 
-A [table](https://www.markdownguide.org/extended-syntax/#tables) may be usefull to organize the images.
 
 ## Technologies
 
