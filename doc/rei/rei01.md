@@ -5,7 +5,7 @@
 * O objetivo do nosso trabalho é desenvolver um sistema de gestão para uma pequena cadeia de supermercados situados na área da Maia como o objetivo de melhorar a sua logística, e organização de dados.
 
 * Cada supermercado emprega mais de que um  empregado e esse só pode trabalhar para apenas um dos supermercados. Dos empregados que trabalham para um supermercado ,um deles é responsável pela gerência do supermercado e fundamental para o correto funcionamento do mesmo. 
-Deve ser possível na Base de dados, armazenar o salario ,sexo , morada, data de nascimento e numero de telemóvel de cada emprega, e cada um tem deve ter um ID associado.
+Deve ser possível na Base de dados, armazenar o SALARIO ,sexo , morada, data de nascimento e numero de telemóvel de cada emprega, e cada um tem deve ter um ID associado.
 * Também e necessário ter acesso  aos produtos que cada supermercado vende, uma vez que cada supermercado pode vender uma maior variedade de produtos ou até mesmo vender produtos diferentes. O produto é caracterizados por um, nome ,código de produto ,produtor e o preço atual e cada um deve pertencer a um tipo de produto ,para permitir uma melhor gestão dos diferentes produtos do mesmo tipo que os supermercados vendem e dos fornecedores dos diferentes tipos de produtos.
 
 * Os fornecedores que fornecem produtos aos supermercados podem fornecer diferentes tipos de produtos, ou fornecer apenas um tipo de produto.
@@ -30,47 +30,45 @@ SUPERMERDADO (\_SupermercadoID\_, Morada (rua, numeroDePorta, freguesia))
 *	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
 
 
-EMPREGADOS (HorasDeServiço, NomeEmpregado, EmpregadoID, sexo, endereço, salario, dataNascimento)
-*	HorasDeServiço: Horas de serviço de cada empregado.
-*	NomeEmpregado: Nome completo de cada empregado.
-*	EmpregadoID: Número identificador exclusivo para cada empregado. (Chave Primária)
+EMPREGADOS (\_Nome\_, ID, SEXO, MORADA, SALARIO, dataNascimento,numTELEMOVEL)
+*	NOME: Nome completo de cada empregado.
+*	EID: Número identificador exclusivo para cada empregado. (Chave Primária)
 *	Sexo: Género de cada empregado.
-*	Endereço: Morada de cada empregado
-*	Salario: Salário de cada empregado
+*	MORADA: Morada de cada empregado
+*	SALARIO: Salário de cada empregado
 *	dataNascimento: Data de nascimento de cada empregado.
+* numTELEMOVEL
 
-CLIENTE (nome, morada, dataNascimento, sexo, telefone, e-mail, id)
-*	Nome: nome de cada cliente
-*	Morada: morada de cada cliente
-*	dataNascimento: Data de nascimento de cada cliente.
-*	Sexo: Género de cada cliente
-*	Telefone: Número de telefone de cada cliente
-*	E-mail: E-mail de cada cliente.
+clienteAFILIADO (NOME, MORADA, dataNascimento,EMAIL, ID)
+*	NOME: nome de cada cliente
+*	MORADA: morada de cada cliente
+*	numTELEMOVEL:
+*	Email: E-mail de cada cliente.
 *	ID: Número identificador exclusivo para cada cliente (Chave Primária).
 
-PRODUTOS (ID, nome, preço, tipodeProdutos, quantidadeStock, dataExpiracao) 
-*	ID: Número identificador exclusivo para cada produto (Chave Primária).
-*	Nome: Nome de cada produto
-*	Preço: Preço de cada produto
-*	Categoria: Categoria de cada produto
-*	QuantidadeStock: quantidade de stock de cada produto
-*	dataExpiração: Data que um determinado produto expira (depende da categoria do produto).
+PRODUTO (codPRODUTO, NOME, preçoATUAL,PRODUTOR) 
+*	codPRODUTO: Número identificador exclusivo para cada produto (Chave Primária).
+*	NOME: Nome de cada produto
+* preçoATUAL: Preço de cada produto
+* PRODUTOR:empresa que produz o produto
 
-DISTRUBUIDORAS (nome, telefone, tipoProdutos, dadosPagamento (NIPC, IBAN))
-*	Nome: Nome da distribuidora
-*	Telefone: Número de telefone de uma distribuidora
-*	tipoProdutos: Tipo de produtos que distribuem
-*	dadosPagamento: Dados para se poder pagar ás distribuidoras (NIPC, IBAN) (Chave Primária).
+tipoPRODUTO(tipoNOME,tipoID)
+* tipoNOME:tipo do produto(ex,Lacticínios,bebidas,etc)
+* tipoID:numero atribuido cada tipo de produto diferente
+
+Fornecedor (NOME, numTELEFONE, EMAIL)
+*	NOME: Nome da distribuidora
+*	numTELEFONE: Número de telefone do fornecedor
+* EMAIL:E-mail de cada FORNECEDOR
 
 ### **Associações**:
-* O armazém **armazena** produtos;
-* A notas de encomendas **são efetuadas** pelo armazém.
-* Supermercado faz **pedidos** ao armazém 
-* As notas de encomenda contem **produtos** e informação do respetivo distribuidor.
-* Os supermercados **contem** produtos
-* O cliente pode estar **associado** a um cartão cliente
-* Um empregado **administra** um supermercado
 
+* Compra(clienteAFILIADO,Produto)              M:N P|P
+* Pertence(Produto,tipoProduto)                M:N T|P  
+* fornece(Fornecedor,tipoProduto)              M:N P|P
+* vende(SUPERMECADO,Produto)                   M:N P|P
+* TrabalhaPara(EMPREGADO,SUPERMECADO)          1:N T|T
+* Gerencia(EMPREGADO,sUPERMECADO)              1:1 T|P
 
 
 
