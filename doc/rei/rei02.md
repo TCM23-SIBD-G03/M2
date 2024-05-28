@@ -1,37 +1,64 @@
 # C2 : Especificação de Requisitos
 
+  
+  
+  
+
+A especificação detalhada dos tipos de utilizadores e suas respetivas funcionalidades garante que o sistema de informação atenda às necessidades operacionais da rede de supermercados, de forma a proporcionar uma maior eficiência e controlo em todas as áreas críticas do negócio.
+
+#### 1. Administrador do Sistema
+
+-   **Gerenciar Usuários**:
+    
+    -   Adicionar, editar e remover usuários do sistema.
+    -   Atribuir e modificar perfis de acesso.
+
+-   **Gerar Relatórios Avançados**:
+    
+    -   Acessar todos os tipos de relatórios (inventário, vendas e pedidos)
+  
 
 
-    Developer: 
-        Criar e melhorar o sistema de banco de dados quando necessário e geram documentação sobre o sistema, oferendo aos usuários um manual operacional e documentação de apoio.
-        
-        Criar a interface de produtos para o empregado responsabel verificar os produtos que contem ;
+#### 2. Gerente de Loja
 
-        Criar e manter a interface de utilizador para os fiscalizadores inserir os dados necessários e visualizar o status do passe do utilizador;
+-   **Gerir Produtos**:
+    
+    -   Adicionar, editar e remover produtos da loja.
+    
+-   **Monitorar Vendas**:
+    
+    -   Visualizar e consultar vendas realizadas.
+    -   Gerar relatórios de vendas específicas da loja.
+    
+-   **Gerir Estoque**:
+    
+    -   Monitorar níveis de stock.
+    -   Registar entrada e saída de produtos no inventário.
+-   **Gerir Pessoal**:
+    
+    -   Adicionar, editar e remover operadores de caixa.
 
-        Criar e manter a interface de utilizador para os fiscalizadores verificarem o histórico do utilizador;
+#### 3. Operador de Caixa
 
-        Implementar a lógica para determinar as ações que serão tomadas pelo fiscalizador (permite que o utilizador continue a usar o serviço ou multá-lo por não ter um passe válido);
+-   **Registar Vendas**:
+    
+    -   Registar produtos vendidos.
 
-        Implementar a notificação ao utilizador, se este for multado, recebe uma notificação no e-mail ou número de telefone, informando sobre a multa e como pagar a mesma;
+-   **Consultar Produtos**:
+    
+    -   Consultar informações básicas de produtos.
 
-    Fiscalizador: Pessoa responsável por verificar se os utilizadores estão a usar o sistema de transporte público corretamente. As funcionalidades a que ele tem acesso incluem:
+#### 5. Gerente de Compras
 
-        Verificar se o utilizador possui um cartão de andante válido;
-
-        Verificar se o utilizador possui um passe de zona geral válido;
-
-        Verificar o status do passe/cartão andante;
-
-        Multar o utilizador, se ele não estiver usando o sistema corretamente;
-
-    Utilizador Final: Pessoa que usa o sistema de transporte público, possui um cartão de andante e pode ter ou não um passe de zona geral associado a ele. As funcionalidades a que ele tem acesso incluem:
-
-        Registrar-se no sistema de cartões de andante;
-
-        Recarregar o cartão de andante;
-
-        Informar ID ao fiscalizador (caso não tenha o seu cartão/passe consigo);
+-   **Gerir fornecedores**:
+    
+    -   Adicionar, editar e remover fornecedores.
+    -   Consultar informações detalhadas de fornecedores (id, morada e tipo).
+    
+-   **Criar e gerir os pedidos**:
+    
+    -   Registrar novos pedidos de compra.
+    -   Atualizar e consultar o status dos pedidos.
+    -   Gerar relatórios de pedidos realizados.
 
 [< Previous](rei01.md) | [^ Main](/../../) | [Next >](rei03.md)
-:--- | :---: | ---: 
