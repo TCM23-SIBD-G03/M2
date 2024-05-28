@@ -48,7 +48,7 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
     
     -   Consultar informações básicas de produtos.
 
-#### 5. Gerente de Compras
+#### 4. Gerente de Compras
 
 -   **Gerir fornecedores**:
     
