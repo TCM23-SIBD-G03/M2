@@ -8,12 +8,12 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
 
 #### 1. Administrador do Sistema
 
--   **Gerenciar Usuários**:
+-   **Gerir Usuários**:
     
     -   Adicionar, editar e remover usuários do sistema.
     -   Atribuir e modificar perfis de acesso.
 
--   **Gerar Relatórios Avançados**:
+-   **Criar Relatórios Avançados**:
     
     -   Acessar todos os tipos de relatórios (inventário, vendas e pedidos)
   
@@ -30,7 +30,7 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
     -   Visualizar e consultar vendas realizadas.
     -   Gerar relatórios de vendas específicas da loja.
     
--   **Gerir Estoque**:
+-   **Gerir inventário**:
     
     -   Monitorar níveis de stock.
     -   Registar entrada e saída de produtos no inventário.
@@ -57,8 +57,7 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
     
 -   **Criar e gerir os pedidos**:
     
-    -   Registrar novos pedidos de compra.
-    -   Atualizar e consultar o status dos pedidos.
+    -   Registar novos pedidos de compra.
     -   Gerar relatórios de pedidos realizados.
 
 [< Previous](rei01.md) | [^ Main](/../../) | [Next >](rei03.md)
