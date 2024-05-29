@@ -19,9 +19,9 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
   
 
 
-<<<<<<< HEAD
+
     
-=======
+
 #### 2. Gerente de Loja
 
 -   **Gerir Produtos**:
@@ -62,6 +62,6 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
     
     -   Registar novos pedidos de compra.
     -   Gerar relatórios de pedidos realizados.
->>>>>>> 8caa03a68f0b6e3ac54b770143c2bfc9a2de1262
+
 
 [< Previous](rei01.md) | [^ Main](/../../) | [Next >](rei03.md)
