@@ -15,7 +15,7 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
 
 -   **Criar Relatórios Avançados**:
     
-    -   Acessar todos os tipos de relatórios (inventário, vendas e pedidos)
+    -   Acessar todos os tipos de relatórios (inventário, vendas,pedidos,stock)
   
 
 
