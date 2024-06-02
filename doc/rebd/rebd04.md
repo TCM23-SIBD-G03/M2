@@ -44,10 +44,16 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 - **Atributos** (check)*:
 
 | Nome | Coluna(s) | condição |
+|      |           |          |
 | x-xxxxxx-xxxxxxx   | codProduto  |codProduto>= 1000000000000 AND codProduto<= 9999999999999 |
 
+- **Outros Indices***:
 
+| Nome | Coluna(s) |
+| ---- | --------- |
+|      |           |
 
+  *Remover se não existir.
 
 ### Tabela_b
 
