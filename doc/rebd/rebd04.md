@@ -18,22 +18,22 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| codProduto     | Codigo identificador exclusivo para cada produto  | INT     | -           | NÃO    | Não  |
+| codProduto     | Codigo identificador exclusivo para cada produto  | INT     | -           | Não     | Não  |
 | nome    | Nome de cada produto          | VARCHAR(50)     | -      | Não        | Não  |
-| preco   | Preço de cada produto     | Float | -           | 
+| preco   | Preço de cada produto     | Float | -           | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
 - **Chave Primária**: 
 
 | Coluna(s) |
 | --------- |
-| id        |
+| codProduto    |
 
 - **Unicidade** (valores únicos)*:
 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
-| nome_unique | nome      | Sim     |
+| codProduto     | nome      | Não    |
 
 - **Referêncial** (chaves estrangeiras)*:
 
