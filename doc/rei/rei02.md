@@ -56,7 +56,7 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
 -   **Gerir fornecedores**:
     
     -   Adicionar, editar e remover fornecedores.
-    -   Consultar informações detalhadas de fornecedores (id, morada e tipo).
+    -   Consultar informações detalhadas de fornecedores (nif, morada,iban,contactos).
     
 -   **Criar e gerir os pedidos**:
     

@@ -25,12 +25,12 @@ Logo é necessário armazenar a data de compra, quantidade e o produto comprado 
 
 
 
-SUPERMERDADO (\_SupermercadoID\_, Morada (rua, numeroDePorta, freguesia))
+SUPERMERDADO (SupermercadoID, Morada (rua, numeroDePorta, freguesia))
 *	SupermercadoID: Número identificador exclusivo para cada supermercado (Chave Primária)
 *	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
 
 
-EMPREGADOS (\_Nome\_, ID, SEXO, MORADA, SALARIO, dataNascimento,numTELEMOVEL)
+EMPREGADOS (Nome, ID, SEXO, MORADA, SALARIO, dataNascimento,numTELEMOVEL)
 *	NOME: Nome completo de cada empregado.
 *	EID: Número identificador exclusivo para cada empregado. (Chave Primária)
 *	Sexo: Género de cada empregado.

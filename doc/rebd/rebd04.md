@@ -58,10 +58,11 @@ Descrição da Tabela B
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| fornecedorID| identificador unico do fornecedor| BIGINT      | -           | Sim      | Não  |
+| nifFornecedor|  Numero de identifição fiscal unico do fornecedor|INT(9)      | -           | Não     | Não  |
 | nome    | Nome da empresa fornocedora       |     VARCHAR(50)  |     | Não        | Não  |
 | email     | Email da empresa fornocedora       | VARCHAR(100) | -           | Não        | Não  |
 | telefone| Contacto da empresa fornocedora     | INT(12) | -           | Não        | Não |
+| iban| número de conta de pagamento fornecedor  | VARCHAR(34) | -           | Não        | Não |
 
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
@@ -90,7 +91,7 @@ Descrição da Tabela B
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| nif      | numero de identificação fiscal| Int(9)     | -           | Não       | Não  |
+| nifCliente     | numero de identificação fiscal| Int(9)     | -           | Não       | Não  |
 | telemovel    | Contacto do cliente           | INT(9)      |      | Não        | Não  |
 | nome    | Nome do cliente        | VARCHAR(50) | -           | Não        | Não  |
 | email| email pessoal do cliente   | VARCHAR(50)     | -           | Não        | Sim  |
@@ -102,13 +103,61 @@ Descrição da Tabela B
 
 | Coluna(s) |
 | --------- |
-| id        |
+| nifCliente |
 
 - **Unicidade** (valores únicos)*:
 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
-| nome_unique | nome      | Sim     |
+| Nif_unico=xxxxxxxxx | nif|Não    |
+
+- **Referêncial** (chaves estrangeiras)*:
+
+| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+| ----- | --------- | ------------------- | ------------------------- | ------- |
+| ta_fk | tipo      | Tabela_c            | id                        | Não     |
+
+- **Atributos** (check)*:
+
+| Nome | Coluna(s) | condição |
+| ---- | --------- | -------- |
+|      |           |          |
+
+- **Outros Indices***:
+
+| Nome | Coluna(s) |
+| ---- | --------- |
+|      |           |
+
+  *Remover se não existir.
+
+
+### Compra
+
+#### DESCRIÇÃO <!-- omit in toc -->
+
+Descrição da Tabela B
+
+#### COLUNAS <!-- omit in toc -->
+
+| Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
+| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
+| numeroCompra     | Numero adiconado a cada compra feita| Int(9)     | -           | Sim     | Não  |
+| dataCompra    | Data do registo de compra         | DATE    |  now()    | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
+
+- **Chave Primária**: 
+
+| Coluna(s) |
+| --------- |
+| compraID        |
+
+- **Unicidade** (valores únicos)*:
+
+| Nome        | Coluna(s) | Indexar |
+| ----------- | --------- | ------- |
+| Nif_unico=xxxxxxxxx | nif|Não    |
 
 - **Referêncial** (chaves estrangeiras)*:
 
@@ -133,6 +182,151 @@ Descrição da Tabela B
 ## Vistas
 
 _(Inserir a descrição e estrutura das vista, caso existam.)_
+
+### Pedido
+
+#### DESCRIÇÃO <!-- omit in toc -->
+
+Descrição da Tabela B
+
+#### COLUNAS <!-- omit in toc -->
+
+| Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
+| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
+| numeroPedido      | Numero de pedido adicionada a cada pedido feito pelo supermecado| Int(9)     | -           | Sim   | Não  |
+| dataPedido   | Data do registo do pedido        | DATE    |  now()    | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
+
+- **Chave Primária**: 
+
+| Coluna(s) |
+| --------- |
+| compraID        |
+
+- **Unicidade** (valores únicos)*:
+
+| Nome        | Coluna(s) | Indexar |
+| ----------- | --------- | ------- |
+| Nif_unico=xxxxxxxxx | nif|Não    |
+
+- **Referêncial** (chaves estrangeiras)*:
+
+| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+| ----- | --------- | ------------------- | ------------------------- | ------- |
+| ta_fk | tipo      | Tabela_c            | id                        | Não     |
+
+- **Atributos** (check)*:
+
+| Nome | Coluna(s) | condição |
+| ---- | --------- | -------- |
+|      |           |          |
+
+- **Outros Indices***:
+
+| Nome | Coluna(s) |
+| ---- | --------- |
+|      |           |
+
+  *Remover se não existir.
+
+## Vistas
+
+_(Inserir a descrição e estrutura das vista, caso existam.)_
+
+---
+### Supermecado
+
+#### DESCRIÇÃO <!-- omit in toc -->
+
+Descrição da Tabela B
+
+#### COLUNAS <!-- omit in toc -->
+
+| Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
+| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
+| supermecadoID    | Numero de pedido adicionada a cada pedido feito pelo supermecado| Int()     | -           | Sim   | Não  |
+| morada  | Data do registo do pedido        | VARCHAR(50)    |  -    | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
+
+- **Chave Primária**: 
+
+| Coluna(s) |
+| --------- |
+| supermecadoID |
+
+- **Unicidade** (valores únicos)*:
+
+| Nome        | Coluna(s) | Indexar |
+| ----------- | --------- | ------- |
+| ID_UNICO |supermecado |Não    |
+
+- **Referêncial** (chaves estrangeiras)*:
+
+| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+| ----- | --------- | ------------------- | ------------------------- | ------- |
+| ta_fk | tipo      | Tabela_c            | id                        | Não     |
+
+- **Atributos** (check)*:
+
+| Nome | Coluna(s) | condição |
+| ---- | --------- | -------- |
+|      |           |          |
+
+- **Outros Indices***:
+
+| Nome | Coluna(s) |
+| ---- | --------- |
+|      |           |
+
+  *Remover se não existir.
+
+## Vistas
+
+_(Inserir a descrição e estrutura das vista, caso existam.)_
+
+---
+### Empregado
+
+#### DESCRIÇÃO <!-- omit in toc -->
+
+Descrição da Tabela B
+
+#### COLUNAS <!-- omit in toc -->
+
+| Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
+| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
+| empredadoID    | Numero atribuido a cada empregado| Int()     | -           | Sim   | Não  |
+| sexo   | sexo do empregado| CHAR(1)   | -           | Não  | Não |
+| morada  | Data do registo do pedido        | VARCHAR(50)    |  -    | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
+
+- **Chave Primária**: 
+
+| Coluna(s) |
+| --------- |
+| empregadoID |
+
+- **Unicidade** (valores únicos)*:
+
+| Nome        | Coluna(s) | Indexar |
+| ----------- | --------- | ------- |
+| ID_UNICO |empregadoID |Não    |
+
+- **Referêncial** (chaves estrangeiras)*:
+
+| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+| ----- | --------- | ------------------- | ------------------------- | ------- |
+| ta_fk | tipo      | Tabela_c            | id                        | Não     |
+
+- **Atributos** (check)*:
+
+| Nome | Coluna(s) | condição |
+| ---- | --------- | -------- |
+|      |     sexo  |    sexoValido CHECK(gender IN ('F','M'))      |
+
 
 ---
 | [< Previous](rebd03.md) | [^ Main](/../../) | [Next >](rebd05.md) |
