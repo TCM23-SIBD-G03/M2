@@ -19,7 +19,7 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | codProduto     | Codigo identificador exclusivo para cada produto  | INT     | -           | Não     | Não  |
-| nome    | Nome de cada produto          | VARCHAR(50)     | -      | Não        | Não  |
+| nome    | Nome de cada produto          | VARCHAR(100)     | -      | Não        | Não  |
 | preco   | Preço de cada produto     | Float | -           | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -33,7 +33,7 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
-| codProduto     | nome      | Não    |
+| x-xxxxxx-xxxxxxx    | codProduto   | Não    |
 
 - **Referêncial** (chaves estrangeiras)*:
 
@@ -44,16 +44,10 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 - **Atributos** (check)*:
 
 | Nome | Coluna(s) | condição |
-| ---- | --------- | -------- |
-|      |           |          |
+| x-xxxxxx-xxxxxxx   | codProduto  |codProduto>= 1000000000000 AND codProduto<= 9999999999999 |
 
-- **Outros Indices***:
 
-| Nome | Coluna(s) |
-| ---- | --------- |
-|      |           |
 
-  *Remover se não existir.
 
 ### Tabela_b
 
