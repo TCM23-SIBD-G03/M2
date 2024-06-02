@@ -12,7 +12,7 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
-
+Esta tabela tem como objetivo armazenar toda a informação necessária dos produtos vendido  nos supermercados.
 
 #### COLUNAS <!-- omit in toc -->
 
@@ -35,25 +35,20 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 | ----------- | --------- | ------- |
 | x-xxxxxx-xxxxxxx   | codProduto   | Não    |
 
-- **Referêncial** (chaves estrangeiras)*:
 
-| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----- | --------- | ------------------- | ------------------------- | ------- |
-| ta_fk | tipo      | Tabela_c            | id                        | Não     |
 
 - **Atributos** (check)*:
 
 | Nome | Coluna(s) | condição |
 | ---- | --------- | -------- |
 | x-xxxxxx-xxxxxxx   | codProduto  |codProduto>= 1000000000000 AND codProduto<= 9999999999999 |
-- **Outros Indices***:
+
 
 ### Fornecedor
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
-Descrição da Tabela B
-
+Esta tabela tem como objetivo armazenar toda a informação necessária dos fornecedores de produtos  .
 #### COLUNAS <!-- omit in toc -->
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
@@ -84,8 +79,7 @@ Descrição da Tabela B
 ### Cliente
 
 #### DESCRIÇÃO <!-- omit in toc -->
-
-Descrição da Tabela B
+Esta tabela tem como objetivo armazenar toda a informação necessária dos Clientes.
 
 #### COLUNAS <!-- omit in toc -->
 
@@ -123,21 +117,11 @@ Descrição da Tabela B
 | ---- | --------- | -------- |
 |      |           |          |
 
-- **Outros Indices***:
-
-| Nome | Coluna(s) |
-| ---- | --------- |
-|      |           |
-
-  *Remover se não existir.
-
 
 ### Compra
 
 #### DESCRIÇÃO <!-- omit in toc -->
-
-Descrição da Tabela B
-
+Esta tabela tem como objetivo armazenar toda as  compras realizadas numa determinada data.
 #### COLUNAS <!-- omit in toc -->
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
@@ -159,11 +143,6 @@ Descrição da Tabela B
 | ----------- | --------- | ------- |
 | Nif_unico=xxxxxxxxx | nif|Não    |
 
-- **Referêncial** (chaves estrangeiras)*:
-
-| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----- | --------- | ------------------- | ------------------------- | ------- |
-| ta_fk | tipo      | Tabela_c            | id                        | Não     |
 
 - **Atributos** (check)*:
 
@@ -171,15 +150,7 @@ Descrição da Tabela B
 | ---- | --------- | -------- |
 |      |           |          |
 
-- **Outros Indices***:
 
-| Nome | Coluna(s) |
-| ---- | --------- |
-|      |           |
-
-  *Remover se não existir.
-
-## Vistas
 
 _(Inserir a descrição e estrutura das vista, caso existam.)_
 
@@ -187,7 +158,7 @@ _(Inserir a descrição e estrutura das vista, caso existam.)_
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
-Descrição da Tabela B
+Esta tabela tem como objetivo armazenar toda os pedidos feitos pelo supermecado e data que foi realizado.
 
 #### COLUNAS <!-- omit in toc -->
 
@@ -210,36 +181,19 @@ Descrição da Tabela B
 | ----------- | --------- | ------- |
 | Nif_unico=xxxxxxxxx | nif|Não    |
 
-- **Referêncial** (chaves estrangeiras)*:
-
-| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----- | --------- | ------------------- | ------------------------- | ------- |
-| ta_fk | tipo      | Tabela_c            | id                        | Não     |
-
 - **Atributos** (check)*:
 
 | Nome | Coluna(s) | condição |
 | ---- | --------- | -------- |
 |      |           |          |
 
-- **Outros Indices***:
 
-| Nome | Coluna(s) |
-| ---- | --------- |
-|      |           |
 
-  *Remover se não existir.
-
-## Vistas
-
-_(Inserir a descrição e estrutura das vista, caso existam.)_
-
----
 ### Supermecado
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
-Descrição da Tabela B
+Esta tabela tem como objetivo armazenar e identificar todos os supermecados que fazem parte da cadeia de supermecados.
 
 #### COLUNAS <!-- omit in toc -->
 
@@ -262,11 +216,6 @@ Descrição da Tabela B
 | ----------- | --------- | ------- |
 | ID_UNICO |supermecado |Não    |
 
-- **Referêncial** (chaves estrangeiras)*:
-
-| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----- | --------- | ------------------- | ------------------------- | ------- |
-| ta_fk | tipo      | Tabela_c            | id                        | Não     |
 
 - **Atributos** (check)*:
 
@@ -274,24 +223,12 @@ Descrição da Tabela B
 | ---- | --------- | -------- |
 |      |           |          |
 
-- **Outros Indices***:
 
-| Nome | Coluna(s) |
-| ---- | --------- |
-|      |           |
-
-  *Remover se não existir.
-
-## Vistas
-
-_(Inserir a descrição e estrutura das vista, caso existam.)_
-
----
 ### Empregado
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
-Descrição da Tabela B
+Esta tabela tem como objetivo armazenar na base de dados toda a informção necessaria dos empregados .
 
 #### COLUNAS <!-- omit in toc -->
 
