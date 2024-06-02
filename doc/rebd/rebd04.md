@@ -58,10 +58,10 @@ Descrição da Tabela B
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| fornecedorID       | identificador da tabela A | BIGINT      | -           | Não       | Não  |
-| nome    | Data do registo           |      varChar(50)  |     | Não        | Não  |
-| email     | Nome do registo           | VARCHAR(100) | -           | Não        | Não  |
-| telefone| Conteudo do documento     | BIGINT(12) | -           | Não        | Não |
+| fornecedorID| identificador unico do fornecedor| BIGINT      | -           | Sim      | Não  |
+| nome    | Nome da empresa fornocedora       |      varChar(50)  |     | Não        | Não  |
+| email     | Email da empresa fornocedora       | VARCHAR(100) | -           | Não        | Não  |
+| telefone| Contacto da empresa fornocedora     | Int(12) | -           | Não        | Não |
 
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
@@ -70,37 +70,15 @@ Descrição da Tabela B
 
 | Coluna(s) |
 | --------- |
-| id        |
+| fornecedorID  |
 
 - **Unicidade** (valores únicos)*:
 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
-| nome_unique | nome      | Sim     |
-
-- **Referêncial** (chaves estrangeiras)*:
-
-| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----- | --------- | ------------------- | ------------------------- | ------- |
-| ta_fk | tipo      | Tabela_c            | id                        | Não     |
-
-- **Atributos** (check)*:
-
-| Nome | Coluna(s) | condição |
-| ---- | --------- | -------- |
-|      |           |          |
-
-- **Outros Indices***:
-
-| Nome | Coluna(s) |
-| ---- | --------- |
-|      |           |
-
-  *Remover se não existir.
-
-## Vistas
-
-_(Inserir a descrição e estrutura das vista, caso existam.)_
+| id_unico | fornecedorID   | Não     |
+| id_unico | email    | Não     |
+| id_unico | telefone    | Não     |
 
 
 
