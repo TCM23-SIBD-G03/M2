@@ -256,6 +256,9 @@ Esta tabela tem como objetivo armazenar na base de dados toda a informção nece
 | sexo   | sexo do empregado| CHAR(1)   | -           | Não  | Não |
 | morada  | Data do registo do pedido        | VARCHAR(50)    |  -    | Não        | Não  |
 | supermecado  | Id do supermecado que o empregado trabalha| Int(10)     | -           | Não   | Não  |
+| salario | valor a receber | FLOAT()     | -           | Não   | Não  |
+| cargo | função que realiza | VARCHAR(10)     | -           | Não   | Não  |
+| horasServiso | carga horária obrigatoria| Int(10)     | -           | Não   | Não  |
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -383,7 +386,12 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 | --------- |
 |supermecadoID  |
 | codProduto|
+- **Unicidade** (valores únicos)*:
 
+| Nome        | Coluna(s) | Indexar |
+| ----------- | --------- | ------- |
+| codProduto_Unico|ecodProduto_Unico |Não    |
+| nomeProduto_Unico|ecodProduto_Unico |Não    |
 
 
 
