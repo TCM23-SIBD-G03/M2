@@ -48,11 +48,67 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 | x-xxxxxx-xxxxxxx   | codProduto  |codProduto>= 1000000000000 AND codProduto<= 9999999999999 |
 - **Outros Indices***:
 
+### Fornecedor
+
+#### DESCRIÇÃO <!-- omit in toc -->
+
+Descrição da Tabela B
+
+#### COLUNAS <!-- omit in toc -->
+
+| Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
+| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
+| fornecedorID       | identificador da tabela A | BIGINT      | -           | Não       | Não  |
+| nome    | Data do registo           |      varChar(50)  |     | Não        | Não  |
+| email     | Nome do registo           | VARCHAR(100) | -           | Não        | Não  |
+| telefone| Conteudo do documento     | BIGINT(12) | -           | Não        | Não |
+
+
+#### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
+
+- **Chave Primária**: 
+
+| Coluna(s) |
+| --------- |
+| id        |
+
+- **Unicidade** (valores únicos)*:
+
+| Nome        | Coluna(s) | Indexar |
+| ----------- | --------- | ------- |
+| nome_unique | nome      | Sim     |
+
+- **Referêncial** (chaves estrangeiras)*:
+
+| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+| ----- | --------- | ------------------- | ------------------------- | ------- |
+| ta_fk | tipo      | Tabela_c            | id                        | Não     |
+
+- **Atributos** (check)*:
+
+| Nome | Coluna(s) | condição |
+| ---- | --------- | -------- |
+|      |           |          |
+
+- **Outros Indices***:
+
 | Nome | Coluna(s) |
 | ---- | --------- |
 |      |           |
 
   *Remover se não existir.
+
+## Vistas
+
+_(Inserir a descrição e estrutura das vista, caso existam.)_
+
+
+
+
+
+
+
+
 
 ### Tabela_b
 
