@@ -2,7 +2,7 @@
 _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante, apresente a descrição da tabela correspondente usando o exemplo apresentado.)_
 
 - [Relações](#relações)
-  - [Tabela_a](#Tabela Produto)
+  - [ Tabela Produto](#Tabela Produto)
   - [Tabela_b](#tabela_b)
 - [Vistas](#vistas)
 
@@ -18,8 +18,8 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| codProduto     | Codigo identificador exclusivo para cada produto  | INT     | -           | Não     | Não  |
-| nome    | Nome de cada produto          | VARCHAR(50)     | -      | Não        | Não  |
+| codProduto     | Codigo identificador exclusivo para cada produto  | Int    | -           | Não     | Não  |
+| nome    | Nome de cada produto          | varCHAR(50)     | -      | Não        | Não  |
 | preco   | Preço de cada produto     | Float | -           | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -33,7 +33,7 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
-| x xxxxxx    | codProduto   | Não    |
+| x-xxxxxx-xxxxxxx   | codProduto   | Não    |
 
 - **Referêncial** (chaves estrangeiras)*:
 
