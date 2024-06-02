@@ -4,9 +4,9 @@
 ## Descrição do trabalho
 * O objetivo do nosso trabalho é desenvolver um sistema de gestão para uma pequena cadeia de supermercados situados na área da Maia como o objetivo de melhorar a sua logística, e organização de dados.
 
-* Cada supermercado emprega mais de que um  empregado e esse só pode trabalhar para apenas um dos supermercados. Dos empregados que trabalham para um supermercado ,um deles é responsável pela gerência do supermercado e fundamental para o correto funcionamento do mesmo. 
-Deve ser possível na Base de dados, armazenar o SALARIO ,sexo , morada, data de nascimento e numero de telemóvel de cada emprega, e cada um tem deve ter um ID associado.
-* Também e necessário ter acesso  aos produtos que cada supermercado vende, uma vez que cada supermercado pode vender uma maior variedade de produtos ou até mesmo vender produtos diferentes. O produto é caracterizados por um, nome ,código de produto ,produtor e o preço atual e cada um deve pertencer a um tipo de produto ,para permitir uma melhor gestão dos diferentes produtos do mesmo tipo que os supermercados vendem e dos fornecedores dos diferentes tipos de produtos.
+* Cada supermercado emprega mais de que um  empregado e esse só pode trabalhar para apenas um dos supermercados. Dos empregados que trabalham para um supermercado ,um deles é responsável pela gerência do supermercado e é fundamental para o correto funcionamento do mesmo. 
+Deve ser possível na Base de dados, armazenar o salario ,sexo , morada, data de nascimento e numero de telemóvel de cada empregado, e cada um tem deve ter um ID associado.
+* Também e necessário ter acesso  aos produtos que cada supermercado vende, uma vez que cada supermercado pode vender uma maior variedade de produtos ou até mesmo vender produtos diferentes. O produto é caracterizados por um, nome ,código de produto ,produtor e o preço, e cada um deve pertencer a um tipo de produto ,para permitir uma melhor gestão dos diferentes produtos do mesmo tipo que os supermercados vendem e dos fornecedores dos diferentes tipos de produtos.
 
 * Os fornecedores que fornecem produtos aos supermercados podem fornecer diferentes tipos de produtos, ou fornecer apenas um tipo de produto.
 
@@ -25,50 +25,62 @@ Logo é necessário armazenar a data de compra, quantidade e o produto comprado 
 
 
 
-SUPERMERDADO (SupermercadoID, Morada (rua, numeroDePorta, freguesia))
+SUPERMERDADO (supermercadoID, morada (rua, numeroDePorta, freguesia))
 *	SupermercadoID: Número identificador exclusivo para cada supermercado (Chave Primária)
 *	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
 
 
-EMPREGADOS (Nome, ID, SEXO, MORADA, SALARIO, dataNascimento,numTELEMOVEL)
-*	NOME: Nome completo de cada empregado.
-*	EID: Número identificador exclusivo para cada empregado. (Chave Primária)
-*	Sexo: Género de cada empregado.
-*	MORADA: Morada de cada empregado
-*	SALARIO: Salário de cada empregado
-*	dataNascimento: Data de nascimento de cada empregado.
-* numTELEMOVEL
+EMPREGADO (nome, empregadoID, sexo, morada, salario, cargo, dataNascimento; numeroTelemovel)
+*	nome: Nome completo de cada empregado.
+*	empregadoID: Número identificador exclusivo para cada empregado. (Chave Primária)
+*	sexo: Género de cada empregado.
+*	morada: Morada de cada empregado
+*	salario: Salário de cada empregado
+*	cargo: cargo de cada empregado
+*   dataNascimento: data de nascimento de cada empregado
+*   numeroTelemovel: número de telemóvel de cada empregado
 
-clienteAFILIADO (NOME, MORADA, dataNascimento,EMAIL, ID)
+CLIENTE (nome, morada, ,email,numeroTelemovel, nifCliente)
 *	NOME: nome de cada cliente
 *	MORADA: morada de cada cliente
-*	numTELEMOVEL:
+*	numeroTelemovel: número de telemóvel de cada cliente
 *	Email: E-mail de cada cliente.
-*	ID: Número identificador exclusivo para cada cliente (Chave Primária).
+*	nifCliente: Número identificador exclusivo para cada cliente (Chave Primária).
 
-PRODUTO (codPRODUTO, NOME, preçoATUAL,PRODUTOR) 
+PRODUTO (codProduto, nome, preco) 
 *	codPRODUTO: Número identificador exclusivo para cada produto (Chave Primária).
-*	NOME: Nome de cada produto
-* preçoATUAL: Preço de cada produto
-* PRODUTOR:empresa que produz o produto
+*	nome: Nome de cada produto
+*   preco: Preço de cada produto
 
-tipoPRODUTO(tipoNOME,tipoID)
-* tipoNOME:tipo do produto(ex,Lacticínios,bebidas,etc)
-* tipoID:numero atribuido cada tipo de produto diferente
+FORNECEDOR (nome, email,iban, nifFornecedor)
+*	nome: Nome da distribuidora
+*   email: E-mail de cada fornecedor
+*   iban: iban de cada fornecedor
+*   nifFornecedor: Número identificador exclusivo para cada fornecedor (Chave Primária).
 
-Fornecedor (NOME, numTELEFONE, EMAIL)
-*	NOME: Nome da distribuidora
-*	numTELEFONE: Número de telefone do fornecedor
-* EMAIL:E-mail de cada FORNECEDOR
+PEDIDO (dataPedido, numeroPedido)
+*   dataPedido: data de cada pedido
+*   numeroPedido: Número identificador exclusivo para cada pedido (Chave Primária).
+
+STOCK (quantidade)
+*   quantidade: quantidade de produtos em stock
+
+COMPRA (dataCompra, NumeroCompra)
+*   dataCompra: data de cada compra
+*   NumeroCompra: Número identificador exclusivo para cada compra (Chave Primária).
 
 ### **Associações**:
-
-* Compra(clienteAFILIADO,Produto)              M:N P|P
-* Pertence(Produto,tipoProduto)                M:N T|P  
-* fornece(Fornecedor,tipoProduto)              M:N P|P
-* vende(SUPERMECADO,Produto)                   M:N P|P
-* TrabalhaPara(EMPREGADO,SUPERMECADO)          1:N T|T
-* Gerencia(EMPREGADO,sUPERMECADO)              1:1 T|P
+* Faz(Supermercado,pedido)                     M:N T|T
+* Fornece(Fornecedor,Produto)                  M:N T|T
+* Vende(Supermercado,Produto)                  M:N P|P
+* TrabalhaPara(Empregado,Supermercado)         1:N T|T
+* Gerencia(Empregado,Supermercado)             1:1 P|T
+* Armazena(Supermercado, Stock)
+* EnviadaPara(Pedido,Fornecedor)
+* ProdutosComprados(Compra, Stock)
+* Realiza(Cliente, Compra)
+* ConstutuidoPor(Pedido, Produto)
+* Contem(Stock, Produto)
 
 
 
