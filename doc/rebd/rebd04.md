@@ -2,13 +2,13 @@
 _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante, apresente a descrição da tabela correspondente usando o exemplo apresentado.)_
 
 - [Relações](#relações)
-  - [ Tabela Produto](#Tabela Produto)
+  - [Tabela_a](#Tabela Produto)
   - [Tabela_b](#tabela_b)
 - [Vistas](#vistas)
 
 ## Relações
 
-### Tabela Produto
+### Produto
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
@@ -19,8 +19,8 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | codProduto     | Codigo identificador exclusivo para cada produto  | Int    | -           | Não     | Não  |
-| nome    | Nome de cada produto          | varCHAR(50)     | -      | Não        | Não  |
-| preco   | Preço de cada produto     | Float | -           | Não        | Não  |
+| nome    | Nome de cada produto          | VARCHAR(50)     | -      | Não        | Não  |
+| preco   | Preço de cada produto     | FLOAT | -           | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
 - **Chave Primária**: 
@@ -59,9 +59,9 @@ Descrição da Tabela B
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | fornecedorID| identificador unico do fornecedor| BIGINT      | -           | Sim      | Não  |
-| nome    | Nome da empresa fornocedora       |      varChar(50)  |     | Não        | Não  |
+| nome    | Nome da empresa fornocedora       |     VARCHAR(50)  |     | Não        | Não  |
 | email     | Email da empresa fornocedora       | VARCHAR(100) | -           | Não        | Não  |
-| telefone| Contacto da empresa fornocedora     | Int(12) | -           | Não        | Não |
+| telefone| Contacto da empresa fornocedora     | INT(12) | -           | Não        | Não |
 
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
@@ -80,15 +80,7 @@ Descrição da Tabela B
 | id_unico | email    | Não     |
 | id_unico | telefone    | Não     |
 
-
-
-
-
-
-
-
-
-### Tabela_b
+### Cliente
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
@@ -98,11 +90,11 @@ Descrição da Tabela B
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| id       | identificador da tabela A | BIGINT      | -           | Sim        | Não  |
-| data     | Data do registo           | DATE        | now()       | Não        | Não  |
-| nome     | Nome do registo           | VARCHAR(50) | -           | Não        | Não  |
-| conteudo | Conteudo do documento     | TEXT        | -           | Não        | Sim  |
-| tipo     | tipo de testes            | BIGINT      | -           | Não        | Sim  |
+| nif      | numero de identificação fiscal| Int(9)     | -           | Não       | Não  |
+| telemovel    | Contacto do cliente           | INT(9)      |      | Não        | Não  |
+| nome    | Nome do cliente        | VARCHAR(50) | -           | Não        | Não  |
+| email| email pessoal do cliente   | VARCHAR(50)     | -           | Não        | Sim  |
+| morada   | morada do cliente| VARCHAR(50)    | -           | Não        | Sim  |
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
