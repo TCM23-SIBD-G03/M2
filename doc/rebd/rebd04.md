@@ -8,22 +8,19 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 
 ## Relações
 
-### Tabela_a
+### Tabela Produto
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
-Tabela Produto
+
 
 #### COLUNAS <!-- omit in toc -->
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| codProduto     | identificador da tabela A | BIGINT      | -           | Sim        | Não  |
-| nome    | Data do registo           | DATE        | now()       | Não        | Não  |
-| preco   | Nome do registo           | VARCHAR(50) | -           | Não        | Não  |
-| conteudo | Conteudo do documento     | TEXT        | -           | Não        | Sim  |
-| tipo     | tipo de testes            | BIGINT      | -           | Não        | Sim  |
-
+| codProduto     | Codigo identificador exclusivo para cada produto  | INT     | -           | NÃO    | Não  |
+| nome    | Nome de cada produto          | VARCHAR(50)     | -      | Não        | Não  |
+| preco   | Preço de cada produto     | Float | -           | 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
 - **Chave Primária**: 
