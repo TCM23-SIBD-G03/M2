@@ -2,7 +2,7 @@
 _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante, apresente a descrição da tabela correspondente usando o exemplo apresentado.)_
 
 - [Relações](#relações)
-  - [Tabela_a](#tabela_a)
+  - [Tabela_a](#Tabela Produto)
   - [Tabela_b](#tabela_b)
 - [Vistas](#vistas)
 
@@ -12,15 +12,15 @@ _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante,
 
 #### DESCRIÇÃO <!-- omit in toc -->
 
-Descrição da Tabela A
+Tabela Produto
 
 #### COLUNAS <!-- omit in toc -->
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| id       | identificador da tabela A | BIGINT      | -           | Sim        | Não  |
-| data     | Data do registo           | DATE        | now()       | Não        | Não  |
-| nome     | Nome do registo           | VARCHAR(50) | -           | Não        | Não  |
+| codProduto     | identificador da tabela A | BIGINT      | -           | Sim        | Não  |
+| nome    | Data do registo           | DATE        | now()       | Não        | Não  |
+| preco   | Nome do registo           | VARCHAR(50) | -           | Não        | Não  |
 | conteudo | Conteudo do documento     | TEXT        | -           | Não        | Sim  |
 | tipo     | tipo de testes            | BIGINT      | -           | Não        | Sim  |
 
