@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Fornecedor` (
  `iban` 	VARCHAR(34) unsigned NOT NULL,
   PRIMARY KEY (`nome`)
 );
-```
+
 CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
   `nifCliente` int(9) UNIQUE NOT NULL,
   `nome` VARCHAR(50) unsigned NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
   `morada` 	VARCHAR(50) unsigned NOT NULL,
    PRIMARY KEY (`nifCliente`)
 );
-```
+
 CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
   `numeroCompra` int(9) unsigned NOT NULL,
   `dataCompra` 	DATE unsigned NOT NULL,
@@ -55,15 +55,16 @@ CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
   `numeroPedido` int(9)  UNIQUE NOT NULL,
   `dataPedido` 	DATE unsigned NOT NULL,
   `nome` 	VARCHAR(50) unsigned NOT NULL,
-  PRIMARY KEY (`numeroPedido`),
-FOREIGN KEY (empregadoID) REFERENCES Empregado(empregadoID),
+  PRIMARY KEY (`numeroPedido`)
+  FOREIGN KEY (empregadoID) REFERENCES Empregado(empregadoID)
 );
+
 CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
   `supermecadoID` Int(10)  UNIQUE NOT NULL,
   `morada` 	VARCHAR(50) unsigned NOT NULL,
   `gerenteID` 		int(10) UNIQUE NOT NULL,
   PRIMARY KEY (`supermecadoID`)
-      FOREIGN KEY (empregadoID) REFERENCES Empregado(empregadoID),
+FOREIGN KEY (empregadoID) REFERENCES Empregado(empregadoID),
    
 );
 CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
@@ -86,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_PedidosRealizados` (
   PRIMARY KEY (`numeroPedido``supermecadoID`)
 );
 CREATE TABLE IF NOT EXISTS `Tabela_ListaDeProdutosPedidos` (
-   `numeroPedido` int(9)  UNIQUE NOT NULL,
+  `numeroPedido` int(9)  UNIQUE NOT NULL,
  `dataPedido` 	DATE unsigned NOT NULL,
   `codProduto` int(13)  UNIQUE NOT NULL,
   `nome` varchar(50) unsigned NOT NULL,
@@ -97,7 +98,6 @@ CREATE TABLE IF NOT EXISTS `Tabela_ListaDeProdutosPedidos` (
   FOREIGN KEY (codProduto) REFERENCES Produto(codProduto),
 );
 CREATE TABLE IF NOT EXISTS `Tabela_Stock` (
-   
   `codProduto` int(13)  UNIQUE NOT NULL,
   `supermecadoID` Int(10)  UNIQUE NOT NULL,
   `quantidade` Int(4) unsigned NOT NULL,
