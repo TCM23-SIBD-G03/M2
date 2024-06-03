@@ -2,8 +2,18 @@
 _(Apresentar o esquema físico da Base de Dados. Para cada relação resultante, apresente a descrição da tabela correspondente usando o exemplo apresentado.)_
 
 - [Relações](#relações)
-  - [Tabela_a](#Tabela Produto)
-  - [Tabela_b](#tabela_b)
+  - [Tabela_Produto](#Tabela_Produto)
+  - [Tabela_Fornecedor](#Tabela_Fornecedor)
+  -[Tabela_Cliente](#Tabela_Cliente)
+-[Tabela_Compra](#Tabela_Compra)
+ -[Tabela_Pedido](#Tabela_Pedido)
+  -[Tabela_Supermecado](#Tabela_Supermecado)
+    -[Tabela_Empregado](#Tabela_Empregado)
+     -[Tabela_PedidosRealizados](#Tabela_PedidosRealizados)
+      -[Tabela_ListaDeProdutosPedidos](#Tabela_ListaDeProdutosPedidos)
+      -[    Tabela_SupermecadoVende](#Tabela_SupermecadoVende)
+     -[    Tabela_Stock](#Tabela_Stock)
+    
 - [Vistas](#vistas)
 
 ## Relações
@@ -384,8 +394,8 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
-| codProduto_Unico|ecodProduto_Unico |Não    |
-| nomeProduto_Unico|ecodProduto_Unico |Não    |
+| codProduto_Unico|codProduto_Unico |Não    |
+| nomeProduto_Unico|codProduto_Unico |Não    |
 
 
 
