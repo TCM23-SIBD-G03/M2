@@ -7,51 +7,63 @@
 
 ### **Entidades**:
   
-SUPERMERDADO (\_SupermercadoID\_, Morada (rua, numeroDePorta, freguesia))
+
+SUPERMERDADO (supermercadoID, morada (rua, numeroDePorta, freguesia))
 *	SupermercadoID: Número identificador exclusivo para cada supermercado (Chave Primária)
-*	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
+*	MoradaSupermercado: Morada do supermecado constituída por uma rua, número de porta e freguesia.
 
 
-EMPREGADOS (\_Nome\_, ID, SEXO, MORADA, SALARIO, dataNascimento,numTELEMOVEL)
-*	NOME: Nome completo de cada empregado.
-*	EID: Número identificador exclusivo para cada empregado. (Chave Primária)
-*	Sexo: Género de cada empregado.
-*	MORADA: Morada de cada empregado
-*	SALARIO: Salário de cada empregado
-*	dataNascimento: Data de nascimento de cada empregado.
-* numTELEMOVEL
+EMPREGADO (nome, empregadoID, sexo, morada, salario, cargo, dataNascimento; numeroTelemovel)
+*	nome: Nome completo de cada empregado.
+*	empregadoID: Número identificador exclusivo para cada empregado. (Chave Primária)
+*	sexo: Género de cada empregado.
+*	morada: Morada de cada empregado
+*	salario: Salário de cada empregado
+*	cargo: cargo de cada empregado
+*   dataNascimento: data de nascimento de cada empregado
+*   numeroTelemovel: número de telemóvel de cada empregado
 
-clienteAFILIADO (NOME, MORADA, dataNascimento,EMAIL, ID)
+CLIENTE (nome, morada, ,email,numeroTelemovel, nifCliente)
 *	NOME: nome de cada cliente
 *	MORADA: morada de cada cliente
-*	numTELEMOVEL:
+*	numeroTelemovel: número de telemóvel de cada cliente
 *	Email: E-mail de cada cliente.
-*	ID: Número identificador exclusivo para cada cliente (Chave Primária).
+*	nifCliente: Número identificador exclusivo para cada cliente (Chave Primária).
 
-PRODUTO (codPRODUTO, NOME, preçoATUAL,PRODUTOR) 
+PRODUTO (codProduto, nome, preco) 
 *	codPRODUTO: Número identificador exclusivo para cada produto (Chave Primária).
-*	NOME: Nome de cada produto
-* preçoATUAL: Preço de cada produto
-* PRODUTOR:empresa que produz o produto
+*	nome: Nome de cada produto
+*   preco: Preço de cada produto
 
-tipoPRODUTO(tipoNOME,tipoID)
-* tipoNOME:tipo do produto(ex,Lacticínios,bebidas,etc)
-* tipoID:numero atribuido cada tipo de produto diferente
+FORNECEDOR (nome, email,iban, nifFornecedor)
+*	nome: Nome da distribuidora(Chave Primária)
+*   email: E-mail de cada fornecedor
+*   iban: iban de cada fornecedor
+*   nifFornecedor: Número identificador exclusivo para cada fornecedor .
 
-Fornecedor (NOME, numTELEFONE, EMAIL)
-*	NOME: Nome da distribuidora
-*	numTELEFONE: Número de telefone do fornecedor
-* EMAIL:E-mail de cada FORNECEDOR
+PEDIDO (dataPedido, numeroPedido)
+*   dataPedido: data de cada pedido
+*   numeroPedido: Número identificador exclusivo para cada pedido (Chave Primária).
+
+STOCK (quantidade)
+*   quantidade: quantidade de produtos em stock
+
+COMPRA (dataCompra, NumeroCompra)
+*   dataCompra: data de cada compra
+*   NumeroCompra: Número identificador exclusivo para cada compra (Chave Primária).
 
 ### **Associações**:
-
-* Compra(clienteAFILIADO,Produto)              M:N P|P
-* Pertence(Produto,tipoProduto)                M:N T|P  
-* fornece(Fornecedor,tipoProduto)              M:N P|P
-* vende(SUPERMECADO,Produto)                   M:N P|P
-* TrabalhaPara(EMPREGADO,SUPERMECADO)          1:N T|T
-* Gerencia(EMPREGADO,sUPERMECADO)              1:1 T|P
-
+* Faz(Supermercado,pedido)                     M:N T|T
+* Fornece(Fornecedor,Produto)                  M:N T|T
+* Vende(Supermercado,Produto)                  M:N P|P
+* TrabalhaPara(Empregado,Supermercado)         1:N T|T
+* Gerencia(Empregado,Supermercado)             1:1 P|T
+* Armazena(Supermercado, Stock)                1:1 T|P
+* EnviadaPara(Pedido,Fornecedor)               1:N T|P
+* atualiza(Compra, Stock)                      N:1 P|T
+* Realiza(Cliente, Compra)                     1:N P|T
+* ConstutuidoPor(Pedido, Produto)              M:N T|P
+* Contem(Stock, Produto)                       M:N T|P
 
 ## Regras de negócio adicionais (Restrições)
 _(Apresentar uma lista detalhada das regras e restrições não possíveis de representar no modelo E/A, que visam a manutenção da consistência e integridade da modelação do problema)_

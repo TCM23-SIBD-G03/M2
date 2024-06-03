@@ -27,7 +27,7 @@ Logo é necessário armazenar a data de compra, quantidade e o produto comprado 
 
 SUPERMERDADO (supermercadoID, morada (rua, numeroDePorta, freguesia))
 *	SupermercadoID: Número identificador exclusivo para cada supermercado (Chave Primária)
-*	MoradaSupermercado: Morada do armazém constituída por uma rua, número de porta e freguesia.
+*	MoradaSupermercado: Morada do supermecado constituída por uma rua, número de porta e freguesia.
 
 
 EMPREGADO (nome, empregadoID, sexo, morada, salario, cargo, dataNascimento; numeroTelemovel)
@@ -53,10 +53,10 @@ PRODUTO (codProduto, nome, preco)
 *   preco: Preço de cada produto
 
 FORNECEDOR (nome, email,iban, nifFornecedor)
-*	nome: Nome da distribuidora
+*	nome: Nome da distribuidora(Chave Primária)
 *   email: E-mail de cada fornecedor
 *   iban: iban de cada fornecedor
-*   nifFornecedor: Número identificador exclusivo para cada fornecedor (Chave Primária).
+*   nifFornecedor: Número identificador exclusivo para cada fornecedor .
 
 PEDIDO (dataPedido, numeroPedido)
 *   dataPedido: data de cada pedido
@@ -75,12 +75,12 @@ COMPRA (dataCompra, NumeroCompra)
 * Vende(Supermercado,Produto)                  M:N P|P
 * TrabalhaPara(Empregado,Supermercado)         1:N T|T
 * Gerencia(Empregado,Supermercado)             1:1 P|T
-* Armazena(Supermercado, Stock)
-* EnviadaPara(Pedido,Fornecedor)
-* ProdutosComprados(Compra, Stock)
-* Realiza(Cliente, Compra)
-* ConstutuidoPor(Pedido, Produto)
-* Contem(Stock, Produto)
+* Armazena(Supermercado, Stock)                1:1 T|P
+* EnviadaPara(Pedido,Fornecedor)               1:N T|P
+* atualiza(Compra, Stock)                      N:1 P|T
+* Realiza(Cliente, Compra)                     1:N P|T
+* ConstutuidoPor(Pedido, Produto)              M:N T|P
+* Contem(Stock, Produto)                       M:N T|P
 
 
 
