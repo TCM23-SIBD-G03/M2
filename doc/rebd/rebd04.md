@@ -66,13 +66,13 @@ Esta tabela tem como objetivo armazenar toda a informação necessária dos forn
 
 | Coluna(s) |
 | --------- |
-| fornecedorID  |
+| nome |
 
 - **Unicidade** (valores únicos)*:
 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
-| id_unico | fornecedorID   | Não     |
+| id_unico | nome  | Não     |
 | id_unico | email    | Não     |
 | id_unico | telefone    | Não     |
 
@@ -172,7 +172,7 @@ Esta tabela tem como objetivo armazenar toda os pedidos feitos pelo supermecado 
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | numeroPedido      | Numero de pedido adicionada a cada pedido feito pelo supermecado| Int(9)     | -           | Sim   | Não  |
 | dataPedido   | Data do registo do pedido        | DATE    |  now()    | Não        | Não  |
-|nifFornecedor| Nif do fornecedor que foi feito o pedido|INT(9) | -|Não|Não|
+| nome    | Nome da empresa fornocedora       |     VARCHAR(50)  |     | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
 - **Chave Primária**: 
@@ -191,13 +191,7 @@ Esta tabela tem como objetivo armazenar toda os pedidos feitos pelo supermecado 
 
 | Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
 | ----- | --------- | ------------------- | ------------------------- | ------- |
-| nifFornecedor_fk | nifFornecedor| Tabela_Fornecedor   | nifFornecedor                  | Não     |
-
-- **Atributos** (check)*:
-
-| Nome | Coluna(s) | condição |
-| ---- | --------- | -------- |
-|      |           |          |
+| nomeFornecedor_fk | Fornecedor| Tabela_Fornecedor   | nome           | Não     |
 
 
 
@@ -339,7 +333,7 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos pedidos pe
 | codProduto     | Codigo identificador exclusivo para cada produto  | Int    | -           | Não     | Não  |
 | nome    | Nome de cada produto          | VARCHAR(50)     | -      | Não        | Não  |
 | preco   | Preço de cada produto     | FLOAT() | -           | Não        | Não  |
-| quantidade  |  unidades pedidas de um produto | Int(2) | -           | Não  | Não  |
+| quantidade  |  unidades pedidas de um produto | Int(4) | -           | Não  | Não  |
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -400,6 +394,41 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 | Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
 | ----- | --------- | ------------------- | ------------------------- | ------- |
 |nsupermecadoID_fk| supermecadoID| Tabela_Supermecado    | supermecadoID     | Não     |
+| codProduto_fk |codProduto| Tabela_Produto    | codProduto      | Não     |
+
+---
+### Tabela_Stock
+
+#### DESCRIÇÃO <!-- omit in toc -->
+
+Está tabela tem como objetivo armazenar na base de dados,a quantidade de produtos em stock num determinado supermecado.
+
+#### COLUNAS <!-- omit in toc -->
+
+| Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
+| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
+
+| supermecadoID    | Numero que identifica o supermecado| Int(10)     | -           | Sim   | Não  |
+| codProduto     | Codigo identificador exclusivo para cada produto  | Int    | -           | Não     | Não  |
+| quantidade  |  unidades pedidas de um produto | Int(4) | -           | Não  | Não  |
+
+
+#### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
+
+- **Chave Primária**: 
+
+| Coluna(s) |
+| --------- |
+|quantidade  |
+
+
+
+
+- **Referêncial** (chaves estrangeiras)*:
+
+| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+| ----- | --------- | ------------------- | ------------------------- | ------- |
+|supermecadoID_fk| supermecadoID| Tabela_Supermecado    | supermecadoID     | Não     |
 | codProduto_fk |codProduto| Tabela_Produto    | codProduto      | Não     |
 
 ---
