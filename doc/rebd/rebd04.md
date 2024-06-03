@@ -410,7 +410,7 @@ Está tabela tem como objetivo armazenar na base de dados,a quantidade de produt
 
 | supermecadoID    | Numero que identifica o supermecado| Int(10)     | -           | Sim   | Não  |
 | codProduto     | Codigo identificador exclusivo para cada produto  | Int    | -           | Não     | Não  |
-| quantidade  |  unidades pedidas de um produto | Int(4) | -           | Não  | Não  |
+| quantidade  |  unidades em stock de um produto | Int(4) | -           | Não  | Não  |
 
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
@@ -432,6 +432,6 @@ Está tabela tem como objetivo armazenar na base de dados,a quantidade de produt
 | codProduto_fk |codProduto| Tabela_Produto    | codProduto      | Não     |
 
 ---
----
+
 | [< Previous](rebd03.md) | [^ Main](/../../) | [Next >](rebd05.md) |
 | :---------------------- | :------------------------------------------------------: | ------------------: |
