@@ -31,65 +31,65 @@ CREATE TABLE IF NOT EXISTS `Tabela_Fornecedor` (
   `nome` VARCHAR(50)  UNIQUE NOT NULL,
   `email` 	VARCHAR(100) unsigned NOT NULL,
   `telefone` 	INT(12) unsigned NOT NULL,
- `iban` 	VARCHAR(34) unsigned NOT NULL,
-  PRIMARY KEY (`nome`)
+   `iban` 	VARCHAR(34) unsigned NOT NULL,
+    PRIMARY KEY (`nome`)
 );
 
 CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
   `nifCliente` int(9) UNIQUE NOT NULL,
-  `nome` VARCHAR(50) unsigned NOT NULL,
-  `telemovel` 	INT(12) unsigned NOT NULL,
-  `email` 	VARCHAR(100) unsigned NOT NULL,
-  `morada` 	VARCHAR(50) unsigned NOT NULL,
-   PRIMARY KEY (`nifCliente`)
+  `nome`VARCHAR(50) unsigned NOT NULL,
+  `telemovel`INT(12) unsigned NOT NULL,
+  `email`VARCHAR(100) unsigned NOT NULL,
+  `morada`VARCHAR(50) unsigned NOT NULL,
+   PRIMARY KEY(`nifCliente`)
 );
 
 CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
-  `numeroCompra` int(9) unsigned NOT NULL,
-  `dataCompra` 	DATE unsigned NOT NULL,
-  `nifCliente` 	Int(9)  UNIQUE NOT NULL,
+  `numeroCompra`int(9) unsigned NOT NULL,
+  `dataCompra`DATE unsigned NOT NULL,
+  `nifCliente`Int(9)  UNIQUE NOT NULL,
   PRIMARY KEY (`nifCliente`)
 );
 
 CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
   `numeroPedido` int(9)  UNIQUE NOT NULL,
-  `dataPedido` 	DATE unsigned NOT NULL,
-  `nome` 	VARCHAR(50) unsigned NOT NULL,
+  `dataPedido` DATE unsigned NOT NULL,
+  `nome` VARCHAR(50) unsigned NOT NULL,
   PRIMARY KEY (`numeroPedido`)
   FOREIGN KEY (empregadoID) REFERENCES Empregado(empregadoID)
 );
 
 CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
-  `supermecadoID` Int(10)  UNIQUE NOT NULL,
-  `morada` 	VARCHAR(50) unsigned NOT NULL,
-  `gerenteID` 		int(10) UNIQUE NOT NULL,
-  PRIMARY KEY (`supermecadoID`)
+  `supermecadoID` Int(10) UNIQUE NOT NULL,
+  `morada`VARCHAR(50) unsigned NOT NULL,
+  `gerenteID` int(10) UNIQUE NOT NULL,
+   PRIMARY KEY (`supermecadoID`)
 FOREIGN KEY (empregadoID) REFERENCES Empregado(empregadoID),
    
 );
 CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
   `empregadoID` Int(10)  UNIQUE NOT NULL,
-  `sexo` 	CHAR(1) sexoValido CHECK(gender IN ('F','M')) unsigned NOT NULL,
-  `morada` 		VARCHAR(50) unsigned NOT NULL,
-  `supermecado` 		Int(10) unsigned NOT NULL,
-`salario` 		FLOAT() unsigned NOT NULL,
-`cargo` 		VARCHAR(10) unsigned NOT NULL,
-`horasServiso` 			Int(10) unsigned NOT NULL,
-  PRIMARY KEY (`empregadoID`)
-    FOREIGN KEY (supermecadoID) REFERENCES Supermecado(supermecadoID),
-     FOREIGN KEY (numeroPedido) REFERENCES Pedido(numeroPedido),
+  `sexo`CHAR(1) sexoValido CHECK(gender IN ('F','M')) unsigned NOT NULL,
+  `morada`VARCHAR(50) unsigned NOT NULL,
+  `supermecado`Int(10) unsigned NOT NULL,
+  `salario`FLOAT() unsigned NOT NULL,
+  `cargo`VARCHAR(10) unsigned NOT NULL,
+  `horasServiso`Int(10) unsigned NOT NULL,
+ PRIMARY KEY (`empregadoID`)
+ FOREIGN KEY (supermecadoID) REFERENCES Supermecado(supermecadoID),
+FOREIGN KEY (numeroPedido) REFERENCES Pedido(numeroPedido),
 );
 
 CREATE TABLE IF NOT EXISTS `Tabela_PedidosRealizados` (
    `numeroPedido` int(9)  UNIQUE NOT NULL,
    `supermecadoID` Int(10)  UNIQUE NOT NULL,
- `dataPedido` 	DATE unsigned NOT NULL,
+ `dataPedido`DATE unsigned NOT NULL,
   PRIMARY KEY (`numeroPedido``supermecadoID`)
 );
 CREATE TABLE IF NOT EXISTS `Tabela_ListaDeProdutosPedidos` (
-  `numeroPedido` int(9)  UNIQUE NOT NULL,
- `dataPedido` 	DATE unsigned NOT NULL,
-  `codProduto` int(13)  UNIQUE NOT NULL,
+  `numeroPedido`int(9)  UNIQUE NOT NULL,
+ `dataPedido`DATE unsigned NOT NULL,
+  `codProduto`int(13)  UNIQUE NOT NULL,
   `nome` varchar(50) unsigned NOT NULL,
   `preco` float() unsigned NOT NULL,
   `quantidade` Int(4) unsigned NOT NULL,
