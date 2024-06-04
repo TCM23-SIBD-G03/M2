@@ -12,8 +12,8 @@ O objetivo do nosso trabalho é desenvolver um sistema de informação para uma 
 
 ## Gallery
 
-![Modelo EA Supermecado](doc/rei/images/ModeloERSupermecado.png)     
-  [ModeloERSupermecado.Dia download ](doc/rei/images/ModeloERSupermecado)
+![Modelo EA Supermecado](doc/rei/images/SupermecadoModeloER.png)     
+  [ModeloERSupermecado.Dia download ](doc/rei/images/SupermecadoModeloER)
 
 ## Technologies
 

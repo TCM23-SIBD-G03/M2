@@ -50,7 +50,7 @@ CLIENTE (nome, morada, ,email,numeroTelemovel, nifCliente)
 PRODUTO (codProduto, nome, preco) 
 *	codPRODUTO: Número identificador exclusivo para cada produto (Chave Primária).
 *	nome: nome de cada produto
-*   preco: Preço de cada produto
+*   precoSupermecado: Preço do supernmecado de cada produto 
 
 FORNECEDOR (nome, email,iban, nifFornecedor)
 *   idFornecedor: numero identificador dos fornecedores(Chave Primária)

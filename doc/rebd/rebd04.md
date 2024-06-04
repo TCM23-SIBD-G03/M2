@@ -272,6 +272,7 @@ Esta tabela tem como objetivo armazenar na base de dados toda a informção nece
 | cargo | função que realiza | varchar(10)     | -           | Não   | Não  |
 | horasServiso | carga horária obrigatoria| int(10)     | -           | Não   | Não  |
 
+
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
 - **Chave Primária**: 
