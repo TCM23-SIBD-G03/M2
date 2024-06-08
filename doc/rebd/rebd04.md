@@ -399,7 +399,7 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| supermecadoID    | Numero que identifica o supermecado| int(2)     | -           | Sim   | Não  |
+| supermecadoID    | Numero que identifica o supermecado| int(2)     | -           |  Não  | Não  |
 | codProduto     | Codigo identificador exclusivo para cada produto  | int(13)  | -           | Não     | Não  |
 | quantidade | quantidade de produto em stock|int() | -           | Não        | Não  |
 
