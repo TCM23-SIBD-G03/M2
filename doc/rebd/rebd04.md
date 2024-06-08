@@ -218,7 +218,7 @@ Esta tabela tem como objetivo armazenar e identificar todos os supermecados que 
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | supermecadoID    | Numero que identifica o supermecado| int(2)     | -           | Sim   | Não  |
 | morada  | Data do registo do pedido        | varchar(50)    |  -    | Não        | Não  |
-|gerenteID| id do empregado reponsavel por gerir o supermecado|int(10)|-|Não|| Não  |
+|empredagoID| id do empregado reponsavel por gerir o supermecado|int(9)|-|Não|| Não  |
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -233,7 +233,7 @@ Esta tabela tem como objetivo armazenar e identificar todos os supermecados que 
 | Nome        | Coluna(s) | Indexar |
 | ----------- | --------- | ------- |
 | supermecadoID_UNICO |supermecado |Não    |
-| gerenteID_UNICO |Empregado |Não    |
+|empredagoIDID_UNICO |Empregado |Não    |
 
 - **Referêncial** (chaves estrangeiras)*:
 
