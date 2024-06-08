@@ -9,7 +9,6 @@
   - [Tabela_Pedido](#Tabela_Pedido)
   - [Tabela_Supermecado](#Tabela_Supermecado)
   - [Tabela_Empregado](#Tabela_Empregado)
-  - [Tabela_PedidosDoSupermecado](#Tabela_PedidosDoSupermecado)
   - [Tabela_FornecedoreDoProduto](#Tabela_FornecedoreDoProduto)
   - [Tabela_ListaDaCompra](#Tabela_ListaDaCompra)
   - [Tabela_ListaProdutosPedido](#Tabela_ListaProdutosPedido)
@@ -182,7 +181,7 @@ Esta tabela tem como objetivo armazenar toda os pedidos feitos pelo supermecado 
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | numeroPedido      | Numero de pedido adicionada a cada pedido feito pelo supermecado| int(9)     | -           | Sim   | Não  |
 | dataPedido   | Data do registo do pedido        | DATE    |  now()    | Não        | Não  |
-| nomeFornecedor    | Nome da empresa fornocedora       |     varchar(50)  |     | Não        | Não  |
+| idFornecedor    | id atribuido a empresa fornocedora       |     int(2) |     | Não        | Não  |
 | supermecadoID    | Numero que identifica o supermecado| int(2)     | -           | Sim   | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -202,7 +201,7 @@ Esta tabela tem como objetivo armazenar toda os pedidos feitos pelo supermecado 
 
 | Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
 | ----- | --------- | ------------------- | ------------------------- | ------- |
-| nomeFornecedor_fk | Fornecedor| Tabela_Fornecedor   | nome           | Não     |
+| idFornecedor_fk | idFornecedor| Tabela_Fornecedor   | idFornecedor       | Não     |
 | supermecadoID _fk |supermecadoID   | Tabela_Supermecado     | supermecadoID                    | Não     |
 
 
@@ -294,44 +293,6 @@ Esta tabela tem como objetivo armazenar na base de dados toda a informção nece
 | Nome | Coluna(s) | condição |
 | ---- | --------- | -------- |
 |      |     sexo  |    sexoValido CHECK(gender IN ('F','M'))      |
-
-### Tabela_PedidosDoSupermecado
-
-#### DESCRIÇÃO <!-- omit in toc -->
-
-Esta tabela tem como objetivo armazenar na base de dados todos os pedidos realizados pelo supermecado  .
-
-#### COLUNAS <!-- omit in toc -->
-
-| Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
-| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
-| numeroPedido    | Numero  adicionada a cada pedido feito pelo supermecado| int(9) | -           | Não  | Não  |
-| supermecadoID   | Numero que identifica o supermecado| int(10)    | -           | Não  | Não |
-| morada  | Data do registo do pedido        | varchar(50)    |  -    | Não        | Não  |
-| dataPedido   | Data do registo do pedido        | DATE    |  now()    | Não        | Não  |
-
-#### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
-
-- **Chave Primária**: 
-
-| Coluna(s) |
-| --------- |
-| numeroPedido |
-|supermecadoID |
-
-- **Unicidade** (valores únicos)*:
-
-| Nome        | Coluna(s) | Indexar |
-| ----------- | --------- | ------- |
-| ID_UNICO |empregadoID |Não    |
-
-
-- **Referêncial** (chaves estrangeiras)*:
-
-| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----- | --------- | ------------------- | ------------------------- | ------- |
-| supermecadoID_fk | Supermecado  | Tabela_Supermecado      | supermecado ID      | Não     |
-|numeroPedido| numeroPedido| Tabela_Pedido     | numeroPedido     | Não     |
 
 ### Tabela_FornecedoreDoProduto
 
