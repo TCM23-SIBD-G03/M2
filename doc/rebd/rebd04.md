@@ -118,11 +118,6 @@ Esta tabela tem como objetivo armazenar toda a informação necessária dos Clie
 | ----------- | --------- | ------- |
 | Nif_unico=xxxxxxxxx | nif|Não    |
 
-- **Referêncial** (chaves estrangeiras)*:
-
-| Nome  | Coluna(s) | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----- | --------- | ------------------- | ------------------------- | ------- |
-| ta_fk | tipo      | Tabela_c            | id                        | Não     |
 
 - **Atributos** (check)*:
 
@@ -149,7 +144,7 @@ Esta tabela tem como objetivo armazenar toda as  compras realizadas numa determi
 
 | Coluna(s) |
 | --------- |
-| compraID        |
+|  numeroCompra        |
 
 - **Unicidade** (valores únicos)*:
 
@@ -187,7 +182,7 @@ Esta tabela tem como objetivo armazenar toda os pedidos feitos pelo supermecado 
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | numeroPedido      | Numero de pedido adicionada a cada pedido feito pelo supermecado| int(9)     | -           | Sim   | Não  |
 | dataPedido   | Data do registo do pedido        | DATE    |  now()    | Não        | Não  |
-| nome    | Nome da empresa fornocedora       |     varchar(50)  |     | Não        | Não  |
+| nomeFornecedor    | Nome da empresa fornocedora       |     varchar(50)  |     | Não        | Não  |
 | supermecadoID    | Numero que identifica o supermecado| int(2)     | -           | Sim   | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -195,7 +190,7 @@ Esta tabela tem como objetivo armazenar toda os pedidos feitos pelo supermecado 
 
 | Coluna(s) |
 | --------- |
-| compraID        |
+| numeroPedido    |
 
 - **Unicidade** (valores únicos)*:
 
