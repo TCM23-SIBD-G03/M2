@@ -265,7 +265,7 @@ Esta tabela tem como objetivo armazenar na base de dados toda a informção nece
 | supermecadoID  | Id do supermecado que o empregado trabalha| int(2)     | -           | Não   | Não  |
 | salario | valor a receber | int(4)    | -           | Não   | Não  |
 | cargo | função que realiza | varchar(10)     | -           | Não   | Não  |
-| horasServiso | carga horária obrigatoria| int(10)     | -           | Não   | Não  |
+| horasServiso | carga horária obrigatoria| int(3)     | -           | Não   | Não  |
 
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
