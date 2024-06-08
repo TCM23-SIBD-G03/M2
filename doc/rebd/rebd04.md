@@ -305,14 +305,7 @@ Está tabela tem como objetivo armazenar na base de dados,os fornecedores de det
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | idFornecedor     | numero de identificaçãodo do fornecedor| int(9)     | -           | Não       | Não  |
-| nifFornecedor|  Numero de identifição fiscal unico do fornecedor|int(9)      | -           | Não     | Não  |
-| nome    | Nome da empresa fornocedora       |     varchar(50)  |     | Não        | Não  |
-| email     | Email da empresa fornocedora       | varchar() | -           | Não        | Não  |
-| telefone| Contacto da empresa fornocedora     | int(12) | -           | Não        | Não |
-| iban| número de conta de pagamento fornecedor  | varchar(34) | -           | Não        | Não |
 | codProduto     | Codigo identificador exclusivo para cada produto  | int(13)  | -           | Não     | Não  |
-| nomeProduto    | Nome de cada produto          | varchar(50)     | -      | Não        | Não  |
-| precoSupermecado  | Preço de cada produto no supermecado     | decimal() | -           | Não        | Não  |
 | precoFornecedor  | Preço de cada produto do fornecedor   | decimal() | -           | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -340,12 +333,8 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | numeroCompra     | Numero adiconado a cada compra feita| int(9)     | -           | Sim     | Não  |
-| dataCompra    | Data do registo de compra         | DATE    |  now()    | Não        | Não  |
 | codProduto     | Codigo identificador exclusivo para cada produto  | int(13)  | -           | Não     | Não  |
-| nomeProduto    | Nome de cada produto          | varchar(50)     | -      | Não        | Não  |
-| precoSupermecado  | Preço de cada produto     | decimal() | -           | Não        | Não  |
-| quantidade | quantidade de produto comprado|int() | -           | Não        | Não  |
-| precoTotalComp | Preço total da compra    | decimal() | -           | Não        | Não  |
+| quantidade | quantidade de produto comprado|int(3) | -           | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
 - **Chave Primária**: 
@@ -377,9 +366,7 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | numeroPedido      | Numero de pedido adicionada a cada pedido feito pelo supermecado| int(9)     | -           | Sim   | Não  |
-| dataPedido   | Data do registo do pedido        | DATE    |  now()    | Não        | Não  |
 | codProduto     | Codigo identificador exclusivo para cada produto  | int(13)  | -           | Não     | Não  |
-| nomeProduto    | Nome de cada produto          | varchar(50)     | -      | Não        | Não  |
 | quantidade | quantidade de produto pedido|int() | -           | Não        | Não  |
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
@@ -412,11 +399,10 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | supermecadoID    | Numero que identifica o supermecado| int(2)     | -           | Sim   | Não  |
-| morada  | Data do registo do pedido        | varchar(50)    |  -    | Não        | Não  |
 | codProduto     | Codigo identificador exclusivo para cada produto  | int(13)  | -           | Não     | Não  |
-| nomeProduto    | Nome de cada produto          | varchar(50)     | -      | Não        | Não  |
-| precoVendido | Preço de cada produto     | decimal() | -           | Não        | Não  |
 | quantidade | quantidade de produto em stock|int() | -           | Não        | Não  |
+| precoDeVenda| Preço de cada produto     | decimal() | -           | Não        | Não  |
+
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
 
