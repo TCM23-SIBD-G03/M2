@@ -386,6 +386,7 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 | ----- | --------- | ------------------- | ------------------------- | ------- |
 |numeroPedido_fk| numeroPedido   | Tabela_Pedido | numeroPedido    | Não     |
 | codProduto_fk |codProduto| Tabela_Produto    | codProduto      | Não     |
+| precoProdutos| Preço da quantidade comprada de x produto      | decimal() | -           | Não        | Não  |
 
 ---
 ### Tabela_Stock
@@ -401,7 +402,7 @@ Está tabela tem como objetivo armazenar na base de dados,os produtos que o supe
 | supermecadoID    | Numero que identifica o supermecado| int(2)     | -           | Sim   | Não  |
 | codProduto     | Codigo identificador exclusivo para cada produto  | int(13)  | -           | Não     | Não  |
 | quantidade | quantidade de produto em stock|int() | -           | Não        | Não  |
-| precoDeVenda| Preço de cada produto     | decimal() | -           | Não        | Não  |
+
 
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
