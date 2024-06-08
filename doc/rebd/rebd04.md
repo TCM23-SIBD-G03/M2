@@ -261,7 +261,7 @@ Esta tabela tem como objetivo armazenar na base de dados toda a informção nece
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | empregadoID    | Numero atribuido a cada empregado| int(10)     | -           | Sim   | Não  |
 | sexo   | sexo do empregado| CHAR(1)   | -           | Não  | Não |
-| morada  | Data do registo do pedido        | varchar(50)    |  -    | Não        | Não  |
+| morada  | morada do empregado        | varchar(50)    |  -    | Não        | Não  |
 | supermecadoID  | Id do supermecado que o empregado trabalha| int(2)     | -           | Não   | Não  |
 | salario | valor a receber | FLOAT()     | -           | Não   | Não  |
 | cargo | função que realiza | varchar(10)     | -           | Não   | Não  |
