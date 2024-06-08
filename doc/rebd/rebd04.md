@@ -263,7 +263,7 @@ Esta tabela tem como objetivo armazenar na base de dados toda a informção nece
 | sexo   | sexo do empregado| CHAR(1)   | -           | Não  | Não |
 | morada  | morada do empregado        | varchar(50)    |  -    | Não        | Não  |
 | supermecadoID  | Id do supermecado que o empregado trabalha| int(2)     | -           | Não   | Não  |
-| salario | valor a receber | FLOAT()     | -           | Não   | Não  |
+| salario | valor a receber | int(4)    | -           | Não   | Não  |
 | cargo | função que realiza | varchar(10)     | -           | Não   | Não  |
 | horasServiso | carga horária obrigatoria| int(10)     | -           | Não   | Não  |
 
