@@ -259,12 +259,15 @@ Esta tabela tem como objetivo armazenar na base de dados toda a informção nece
 | Nome     | Descrição                 | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 | empregadoID    | Numero atribuido a cada empregado| int(3)     | -           | Sim   | Não  |
+| nome| nome do empregado| varchar(50)   | -           | Não  | Não |
 | sexo   | sexo do empregado| CHAR(1)   | -           | Não  | Não |
+| dataNascimento| data de nascimento| date()| -           | Não  | Não |
 | morada  | morada do empregado        | varchar(50)    |  -    | Não        | Não  |
-| supermecadoID  | Id do supermecado que o empregado trabalha| int(2)     | -           | Não   | Não  |
+|telemovel  | contacto do empregado| int(9)     | -           | Não   | Não  |
 | salario | valor a receber | int(4)    | -           | Não   | Não  |
 | cargo | função que realiza | varchar(10)     | -           | Não   | Não  |
 | horasServico | carga horária obrigatoria| int(3)     | -           | Não   | Não  |
+ supermecadoID  | Id do supermecado que o empregado trabalha| int(2)     | -           | Não   | Não  |
 
 
 #### RESTRIÇÕES DE INTEGRIDADE <!-- omit in toc -->
