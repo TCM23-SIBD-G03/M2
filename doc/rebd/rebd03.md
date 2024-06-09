@@ -25,7 +25,7 @@ Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 
 ## Normalização do Esquema Relacional
 
-###Dependências funcionais
+### Dependências funcionais
 
 **codProduto** → nomeProduto
 
