@@ -68,13 +68,13 @@ Stock(#supermecadoID → Supermecado*,#codProduto → Produto*,quantidade)
 ||01|23456789|  912345678|  JohnDoe|       john.doe@example.com|      123Elm|
 |02| 23456780|  923456789|  JaneSmith|     jane.smith@example.com |   456Oak|
 
-####Compra
+#### Compra
 | numeroCompra  | dataCompra             | #idcliente    |#supermecadoID|
 | :------- | :------------------------ | :---------- | :----------  
 |123456789| 2024-01-01|01|03|
 |234567890 | 2024-02-15|05|11|
 
-####Pedido
+#### Pedido
 
 | numeroPedido  | dataPedido            | #idFornecedor   |#supermecadoID|
 | :------- | :------------------------ | :---------- | :----------  
@@ -82,7 +82,7 @@ Stock(#supermecadoID → Supermecado*,#codProduto → Produto*,quantidade)
  |234567890  | 2024-02-20 |22 |06 |
 
 
-###Supermecado
+### Supermecado
 
 | supermecadoID  | morada           | empregadoID|  
 | :------- | :------------------------ | :----------  
@@ -90,22 +90,22 @@ Stock(#supermecadoID → Supermecado*,#codProduto → Produto*,quantidade)
 | 06| 456Oak| 006| 
 | 11| 789Pine| 004| 
 
-###Empregado
+### Empregado
 
 | empregadoID |  nome           | sexo |  dataNascimento | morada | telemovel | salario |cargo|horasServico|#supermecadoID|
 | :------- | :------------------------ | :----------| :------- | :------------------------ | :----------|  :----------|  :----------|  :----------|  :----------   
 |001 |JohnDo|     'M'|	1985-06-15|   123ElmSt|954343215|700|caixa|20|03|
 |002 |JaneSmith|    'F'|	1990-04-22|  456OakSt|982164234|1000|gerente|22|10|
 
-###FornecedoreDoProduto
+### FornecedoreDoProduto
 | #idFornecedor  | #codProduto      | precoFornecedor|  
 | :------- | :------------------------ | :----------  
 |12|1234567890123| 4.5|
 |56|8901234567890|3.1|
 
 
-###ListaDacompra
-| #numeroCompra  | *#codProduto     | quantidade|  
+### ListaDacompra
+| #numeroCompra  | #codProduto     | quantidade|  
 | :------- | :------------------------ | :----------  
 |123456789|6789012345678|2|7.5|
 |234567890|1234567890123|10|3.3|
@@ -113,14 +113,14 @@ Stock(#supermecadoID → Supermecado*,#codProduto → Produto*,quantidade)
 
 
 
-###ListaProdutosPedidos
-| #numeroPedido  | *#codProduto     | quantidade|  
+### ListaProdutosPedidos
+| #numeroPedido  | #codProduto     | quantidade|  
 | :------- | :------------------------ | :----------  
 |123456789|1234567890123|4|
 |234567890 |8901234567890|3|
 
-###Stock
-| #supermecadoID | *#codProduto     | quantidade|  
+### Stock
+| #supermecadoID | #codProduto     | quantidade|  
 | :------- | :------------------------ | :----------  
 |03|6789012345678|9|
 |06|1234567890123|6|
