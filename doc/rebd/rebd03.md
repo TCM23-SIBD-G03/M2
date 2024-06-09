@@ -37,7 +37,7 @@ Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 
 **numeroPedido** → dataPedido
 
-**supermecadoID* → morada
+**supermecadoID** → morada
 
 **empregadoID** → nome,sexo,dataNascimento,morada,telemovel,salario,cargo,horasServico
 
