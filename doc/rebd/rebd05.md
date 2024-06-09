@@ -98,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
     ```
    
  ```
+ ```
 CREATE TABLE IF NOT EXISTS `Tabela_FornecedordoProduto` (
    `idFornecedor` int(2) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
@@ -107,7 +108,10 @@ CREATE TABLE IF NOT EXISTS `Tabela_FornecedordoProduto` (
  PRIMARY KEY ( `idFornecedor`,`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
     ```
+ ```
 
+ ```
+ ```
 CREATE TABLE IF NOT EXISTS `Tabela_ListaDaCompra` (
    `numeroCompra` int(9) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
@@ -119,6 +123,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_ListaDaCompra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
   ```
   ```
+ 
 CREATE TABLE IF NOT EXISTS `Tabela_ListaProdutosPedido` (
    `numeroPedido` int(9) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
