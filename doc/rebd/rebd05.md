@@ -19,17 +19,16 @@ DROP TABLE IF EXISTS `Tabela_ListaDaCompra`;
 DROP TABLE IF EXISTS `Tabela_Stock`;
 
 
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
   `SupermecadoID` int(2) unsigned NOT NULL  UNIQUE,
-  ```
   `morada` varchar(50)  NOT NULL  ,
     `empregadoID` int(9) NOT NULL ,
   PRIMARY KEY (`supermecadoID`),
  FOREIGN KEY (Tabela_Empregado) REFERENCES Tabela_Empregado(empregadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
   `empregadoID` int(2) unsigned NOT NULL UNIQUE,
    `nome` varchar(50) NOT NULL,
@@ -46,13 +45,13 @@ CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
   FOREIGN KEY (Tabela_Supermecado) REFERENCES Tabela_Supermecado(supermecadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Produto` (
   `codProduto` int(13) unsigned NOT NULL UNIQUE,
   `nomeProduto` varchar(50)  NOT NULL UNIQUE,
   PRIMARY KEY (`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Fornecedor` (
   `idFornecedor` int(2) unsigned NOT NULL UNIQUE,
   `nifFornecedor` int(9) unsigned  NOT NULL UNIQUE,
@@ -62,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Fornecedor` (
 	`iban` varchar(34)  NOT NULL,
   PRIMARY KEY (`idFornecedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
   `idCliente` int(9) unsigned NOT NULL UNIQUE,
   `nifCliente` int(9) unsigned  NOT NULL UNIQUE,
@@ -71,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
 	`morada` varchar(50)  NOT NULL,
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
   `numeroPedido` int(9) unsigned NOT NULL UNIQUE,
   `dataPedido` datetime  NOT NULL ,
@@ -81,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
    FOREIGN KEY (Tabela_Fornecedor) REFERENCES Tabela_Fornecedor(idFornecedor),
   FOREIGN KEY (Tabela_Supermecado) REFERENCES Tabela_Supermecado(supermecadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
   `numeroCompra` int(9) unsigned NOT NULL UNIQUE,
   `dataCompra` datetime  NOT NULL ,
@@ -91,10 +90,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
   FOREIGN KEY (Tabela_Cliente) REFERENCES Tabela_Cliente(idCliente),
   FOREIGN KEY (Tabela_Supermecado) REFERENCES Tabela_Supermecado(supermecadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
-
-
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_FornecedordoProduto` (
    `idFornecedor` int(2) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
@@ -103,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_FornecedordoProduto` (
    FOREIGN KEY (Tabela_Produto) REFERENCES Tabela_Produto(codProduto),
  PRIMARY KEY ( `idFornecedor`,`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_ListaDaCompra` (
    `numeroCompra` int(9) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
@@ -113,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_ListaDaCompra` (
       FOREIGN KEY (Tabela_Compra) REFERENCES Tabela_Compra(numeroCompra),
   PRIMARY KEY (  `numeroCompra`,`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_ListaProdutosPedido` (
    `numeroPedido` int(9) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
@@ -122,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_ListaProdutosPedido` (
  FOREIGN KEY (Tabela_Pedido) REFERENCES Tabela_Pedido(numeroPedido),
  PRIMARY KEY (  `numeroPedido`,`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Stock` (
    `supermecadoID` int(2) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
@@ -131,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Stock` (
  FOREIGN KEY (Tabela_Supermecado) REFERENCES Tabela_Supermecado(supermecadoID),
  PRIMARY KEY (  `numeroPedido`,`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-
+  ```
 INSERT INTO `Tabela_Supermecado` (`supermecadoID`, `morada`,`empregadoID`) VALUES
 (03,'123Elm',009),
 (06,'456Oak',006),
@@ -140,7 +136,7 @@ INSERT INTO `Tabela_Supermecado` (`supermecadoID`, `morada`,`empregadoID`) VALUE
 (07,'202Birch',012),
 (05,'303Cedar',006),
 (10,'05Chestnu',016);
-
+  ```
 INSERT INTO `Tabela_Empregado` (`empregadoID`,`nome`, `sexo`,`dataNascimento`,`morada`,`telemovel`,`salario`,`cargo`,`horas`,`supermecadoID`) VALUES
 (001 ,'JohnDoe'  ,     'M'	,1985-06-15 ,   '123ElmSt',954343215,700,'caixa' ,20,03),
 (002 ,'JaneSmith' ,    'F'	,1990-04-22  ,  '456OakSt',982164234,1000,'gerente',  22,10),
@@ -158,7 +154,7 @@ INSERT INTO `Tabela_Empregado` (`empregadoID`,`nome`, `sexo`,`dataNascimento`,`m
 (014,'RachelAdams',  'F' ,1994-11-25   , '1111Cedar' ,976313043,'caixa', 20,02),
 (015,'BrianLewis',   'M' ,1988-06-13   , '1212Walnut' , 902342142, 'caixa',22,10),
 (016,'MeganTurner',  'F', 1996-08-30   , '1313Chestnu' ,915824123, 'gerente',21,10);
-
+  ```
 INSERT INTO `Tabela_Produto` (`codProduto`, `nomeProduto`) VALUES
 (1234567890123,  'Nestle Water'),
 (2345678901234,'Dove Soap'),
@@ -168,7 +164,7 @@ INSERT INTO `Tabela_Produto` (`codProduto`, `nomeProduto`) VALUES
 (6789012345678 , 'Kellogg Cereal'),
 (7890123456789  ,'Gillette Razor'),
 (8901234567890  ,'Pampers Diapers');
-
+  ```
 INSERT INTO `Tabela_Fornecedor` (`idFornecedor`, `nome`,`email`,`telefone`,`iban`) VALUES
 (12 ,  'Nestle'   ,' nestle@example.com',      123456789    ,'AB12345678901234567890123456789012'),
 (34 ,  'Unilever',     'unilever@example.com',    234567890      ,'DE23456789012345678901234567890123'),
@@ -178,7 +174,7 @@ INSERT INTO `Tabela_Fornecedor` (`idFornecedor`, `nome`,`email`,`telefone`,`iban
 (11 ,'Kellogg'   , 'kelloggs@example.com' , 678901234     ,'PQ67890123456789012345678901234567'),
 (22, 'Kraft'       ,'kraft@example.com' , 789012345  ,'ST78901234567890123456789012345678'),
 (33, 'Johnson'     , 'johnson@example.com' ,  890123456    ,'VW89012345678901234567890123456789');
-
+  ```
 INSERT INTO `Tabela_Cliente` (`idCliente`, `nifCliente`,`telemovel`,`nome`,`email`,`morada`) VALUES
 (01, 23456789,  912345678,  'JohnDoe',       'john.doe@example.com',      '123Elm'),
 (02, 23456780,  923456789,  'JaneSmith',     'jane.smith@example.com',    '456Oak'), 
@@ -188,6 +184,7 @@ INSERT INTO `Tabela_Cliente` (`idCliente`, `nifCliente`,`telemovel`,`nome`,`emai
 (06, 23456784,  967890123,  'SarahJohnson',  'sarah.johnson@example.com', '303Cedar' ),
 (07, 23456785,  978901234,  'DavidLee',      'david.lee@example.com',     '404Walnut' ),
 (08, 23456786,  989012345,  'LauraClark',    'laura.clark@example.com',   '505Chestnut');
+  ```
 INSERT INTO `Tabela_Pedido` (`numeroPedido`, `dataPedido`,`idFornecedor`,`supermecadoID`) VALUES
 (123456789 , 2024-01-15,33,03),
 (234567890 , 2024-02-20,22,06),
@@ -197,7 +194,7 @@ INSERT INTO `Tabela_Pedido` (`numeroPedido`, `dataPedido`,`idFornecedor`,`superm
 (678901234 , 2024-06-20,12,05),
 (789012345 , 2024-07-25,90,08),
 (890123456 , 2024-08-30,56,10);
-
+  ```
 INSERT INTO `Tabela_Compra` (`numeroCompra`, `dataCompra`,`idCliente`,`supermecadoID`) VALUES
 (123456789,  2024-01-01,01,03),
 (234567890 , 2024-02-15,05,11),
@@ -207,7 +204,7 @@ INSERT INTO `Tabela_Compra` (`numeroCompra`, `dataCompra`,`idCliente`,`supermeca
 (678901234  ,2024-06-20,01,07),
 (789012345  ,2024-07-30,04,02),
 (890123456  ,2024-08-12,04,11);
-
+  ```
 INSERT INTO `Tabela_FornecedordoProduto`(`idFornecedor`,`codProduto`, `precoFornecedor` ) VALUES
 (12,1234567890123, 4.5),
 (56,8901234567890,3.1),
@@ -217,9 +214,8 @@ INSERT INTO `Tabela_FornecedordoProduto`(`idFornecedor`,`codProduto`, `precoForn
 (33,1234567890123,6.4),
 (34,4567890123456,1.0),
 (90,6789012345678 ,7.8);
-
+  ```
 INSERT INTO `Tabela_ListaProdutosPedido` (`numeroPedido` , `codProduto` ,`quantidade`) VALUES
-
 (123456789,1234567890123, 4),
 (234567890 ,8901234567890,3),
 (890123456,7890123456789,5),
@@ -228,7 +224,7 @@ INSERT INTO `Tabela_ListaProdutosPedido` (`numeroPedido` , `codProduto` ,`quanti
 (234567890 ,1234567890123,6),
 (345678901,4567890123456,1),
 (890123456,6789012345678 ,7);
-
+  ```
 INSERT INTO `Tabela_ListaDaCompra` (`numeroCompra`, `codProduto`, `quantidade`, `precoProdutos`)VALUES
 (123456789,  6789012345678,2,7.5),
 (234567890 , 1234567890123,10,3.3),
@@ -238,7 +234,7 @@ INSERT INTO `Tabela_ListaDaCompra` (`numeroCompra`, `codProduto`, `quantidade`, 
 (123456789  ,8901234567890,11,2.7),
 (789012345  ,1234567890123,6,3.5),
 (456789012   ,7890123456789,9,7.8);
-
+  ```
 INSERT INTO `Tabela_Stock` (`supermecadoID`,`codProduto`,`quantidade`) VALUES
 (03,6789012345678,9),
 (06,1234567890123,6),
