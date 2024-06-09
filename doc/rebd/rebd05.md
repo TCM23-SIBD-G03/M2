@@ -19,8 +19,6 @@ DROP TABLE IF EXISTS `Tabela_ListaDaCompra`;
 DROP TABLE IF EXISTS `Tabela_Stock`;
 
 
-  ```
-  ```
 CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
   `SupermecadoID` int(2) unsigned NOT NULL  UNIQUE,
   `morada` varchar(50)  NOT NULL  ,
@@ -28,8 +26,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
   PRIMARY KEY (`supermecadoID`),
  FOREIGN KEY (Tabela_Empregado) REFERENCES Tabela_Empregado(empregadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-  ```
-  ```
+ 
 CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
   `empregadoID` int(2) unsigned NOT NULL UNIQUE,
    `nome` varchar(50) NOT NULL,
@@ -45,15 +42,13 @@ CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
   PRIMARY KEY (`empregadoID`),
   FOREIGN KEY (Tabela_Supermecado) REFERENCES Tabela_Supermecado(supermecadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-  ```
-  ```
+ 
 CREATE TABLE IF NOT EXISTS `Tabela_Produto` (
   `codProduto` int(13) unsigned NOT NULL UNIQUE,
   `nomeProduto` varchar(50)  NOT NULL UNIQUE,
   PRIMARY KEY (`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-  ```
-  ```
+
 CREATE TABLE IF NOT EXISTS `Tabela_Fornecedor` (
   `idFornecedor` int(2) unsigned NOT NULL UNIQUE,
   `nifFornecedor` int(9) unsigned  NOT NULL UNIQUE,
@@ -73,8 +68,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
 	`morada` varchar(50)  NOT NULL,
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-  ```
-  ```
+
 CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
   `numeroPedido` int(9) unsigned NOT NULL UNIQUE,
   `dataPedido` datetime  NOT NULL ,
