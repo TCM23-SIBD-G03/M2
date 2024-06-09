@@ -48,11 +48,17 @@ Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 **#numeroPedido**,**#codProduto** → quantidade(produtos pedidos)
 
 **#supermecadoID**,**#codProduto** → quantidade(produto em stock)
-
+#### Produto
 | codProduto   |nomeProduto                |
 | :------- | :------------------------ |
 | 1234567890123   | 'Nestle Water   |
 | 2345678901234  |Dove Soap         | 
+
+#### Produto
+| idFornecedor  |nifFornecedor| nome  |email |telefone|iban|
+| :------- | :------------------------ |------------|----------------------------|
+|12 |Nestle  | nestle@example.com'|      123456789    |AB12345678901234567890123456789012|
+|34 |Unilever'|    'unilever@example.com|    234567890   |DE23456789012345678901234567890123'|
 
 [< Previous](rebd02.md) | [^ Main](/../../) | [Next >](rebd04.md)
 :--- | :---: | ---: 
