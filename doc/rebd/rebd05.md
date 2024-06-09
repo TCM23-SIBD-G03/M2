@@ -4,7 +4,7 @@
 
 
 
-
+ ```
 USE `Supermecado`;
 
 DROP TABLE IF EXISTS `Tabela_Supermecado`;
