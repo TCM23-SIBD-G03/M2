@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Fornecedor` (
   PRIMARY KEY (`idFornecedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
   ```
-
+ ```
 CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
   `idCliente` int(9) unsigned NOT NULL UNIQUE,
   `nifCliente` int(9) unsigned  NOT NULL UNIQUE,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Cliente` (
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
  ```
-
+ ```
 CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
   `numeroPedido` int(9) unsigned NOT NULL UNIQUE,
   `dataPedido` datetime  NOT NULL ,
