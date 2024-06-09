@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Produto` (
   PRIMARY KEY (`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
  ```
+ ```
 CREATE TABLE IF NOT EXISTS `Tabela_Fornecedor` (
   `idFornecedor` int(2) unsigned NOT NULL UNIQUE,
   `nifFornecedor` int(9) unsigned  NOT NULL UNIQUE,
