@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `Tabela_Stock`;
 
 CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
   `SupermecadoID` int(2) unsigned NOT NULL  UNIQUE,
+  ```
   `morada` varchar(50)  NOT NULL  ,
     `empregadoID` int(9) NOT NULL ,
   PRIMARY KEY (`supermecadoID`),
