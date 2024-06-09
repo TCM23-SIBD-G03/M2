@@ -59,6 +59,7 @@ Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 |  idFornecedor   |nifFornecedor                 | nome   | email   | telefone | iban |
 | :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
 |  12   | Nestle| int(9)     | nestle@example.com   |  123456789      | AB12345678901234567890123456789012 |
+|34 | Unilever|     unilever@example.com|    234567890|    DE23456789012345678901234567890123|
 
 
 
