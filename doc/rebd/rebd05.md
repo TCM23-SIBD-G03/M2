@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
  FOREIGN KEY (Tabela_Empregado) REFERENCES Tabela_Empregado(empregadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
   ```
+ ```
 CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
   `empregadoID` int(2) unsigned NOT NULL UNIQUE,
    `nome` varchar(50) NOT NULL,
