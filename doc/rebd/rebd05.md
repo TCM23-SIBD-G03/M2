@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
   FOREIGN KEY (Tabela_Supermecado) REFERENCES Tabela_Supermecado(supermecadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
   ```
+ ```
 CREATE TABLE IF NOT EXISTS `Tabela_Produto` (
   `codProduto` int(13) unsigned NOT NULL UNIQUE,
   `nomeProduto` varchar(50)  NOT NULL UNIQUE,
