@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
   ```  
   ```
+
 CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
   `numeroCompra` int(9) unsigned NOT NULL UNIQUE,
   `dataCompra` datetime  NOT NULL ,
@@ -95,8 +96,10 @@ CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
   FOREIGN KEY (Tabela_Cliente) REFERENCES Tabela_Cliente(idCliente),
   FOREIGN KEY (Tabela_Supermecado) REFERENCES Tabela_Supermecado(supermecadoID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
     ```
     ```
+
 CREATE TABLE IF NOT EXISTS `Tabela_FornecedordoProduto` (
    `idFornecedor` int(2) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
