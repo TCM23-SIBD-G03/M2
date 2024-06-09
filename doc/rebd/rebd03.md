@@ -48,5 +48,11 @@ Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 **#numeroPedido**,**#codProduto** → quantidade(produtos pedidos)
 
 **#supermecadoID**,**#codProduto** → quantidade(produto em stock)
+
+| codProduto   |nomeProduto                |
+| :------- | :------------------------ |
+| 1234567890123   | 'Nestle Water   |
+| 2345678901234  |Dove Soap         | 
+
 [< Previous](rebd02.md) | [^ Main](/../../) | [Next >](rebd04.md)
 :--- | :---: | ---: 
