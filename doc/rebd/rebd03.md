@@ -56,10 +56,11 @@ Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 
 #### Fornecedor
 
-| idFornecedor |nifFornecedor| nome | email | telefone | iban|
-| :------- | :------------------------ |
-| 1234567890123   | 'Nestle Water   |
-| 2345678901234  |Dove Soap         | 
+|  idFornecedor   |nifFornecedor                 | nome   | email   | telefone | iban |
+| :------- | :------------------------ | :---------- | :---------- | :--------- | :--- |
+|  12   | Nestle| int(9)     | nestle@example.com   |  123456789      | AB12345678901234567890123456789012 |
+
+
 
 [< Previous](rebd02.md) | [^ Main](/../../) | [Next >](rebd04.md)
 :--- | :---: | ---: 
