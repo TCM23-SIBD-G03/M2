@@ -1,7 +1,7 @@
 # C3 : Normalização
 
 ## Relações
-Produto(_**codProduto**-,nomeProduto)
+Produto(**codProduto**,nomeProduto)
 
 Fornecedor(**idFornecedor**,nifFornecedor,nome,email,telefone,iban)
 
@@ -24,8 +24,28 @@ ListaProdutosPedidos(**#numeroPedido → Pedido **,**#codProduto → Produto**,q
 Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 
 ## Normalização do Esquema Relacional
-_(Apresentar o estudo da normalização das relações obtidas na secção anterior. Desnormalizar se necessário.)_
 
----
+###Dependências funcionais
+
+**codProduto** → nomeProduto
+
+**idFornecedor** →nifFornecedor,nome,email,telefone,iban
+
+**idCliente**  →nifCliente,telemovel,nome,email,morada
+**numeroCompra** → dataCompra,#idcliente → Cliente
+
+**numeroPedido** → dataPedido
+
+**supermecadoID**→morada
+
+**empregadoID**→nome,sexo,dataNascimento,morada,telemovel,salario,cargo,horasServico
+
+**#idFornecedor**,**#codProduto** → precoFornecedor
+
+**#numeroCompra**,**#codProduto**→quantidade(produto Comprado)
+
+**#numeroPedido**,**#codProduto**→quantidade(produtos pedidos)
+
+**#supermecadoID**,**#codProduto**→quantidade(produto em stock)
 [< Previous](rebd02.md) | [^ Main](/../../) | [Next >](rebd04.md)
 :--- | :---: | ---: 
