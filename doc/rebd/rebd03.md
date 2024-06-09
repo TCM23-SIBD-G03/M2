@@ -29,23 +29,24 @@ Stock(**#supermecadoID → Supermecado**,**#codProduto → Produto**,quantidade)
 
 **codProduto** → nomeProduto
 
-**idFornecedor** →nifFornecedor,nome,email,telefone,iban
+**idFornecedor** → nifFornecedor,nome,email,telefone,iban
 
-**idCliente**  →nifCliente,telemovel,nome,email,morada
+**idCliente**  → nifCliente,telemovel,nome,email,morada
+
 **numeroCompra** → dataCompra,#idcliente → Cliente
 
 **numeroPedido** → dataPedido
 
-**supermecadoID**→morada
+**supermecadoID* → morada
 
-**empregadoID**→nome,sexo,dataNascimento,morada,telemovel,salario,cargo,horasServico
+**empregadoID** → nome,sexo,dataNascimento,morada,telemovel,salario,cargo,horasServico
 
 **#idFornecedor**,**#codProduto** → precoFornecedor
 
-**#numeroCompra**,**#codProduto**→quantidade(produto Comprado)
+**#numeroCompra**,**#codProduto** → quantidade(produto Comprado)
 
-**#numeroPedido**,**#codProduto**→quantidade(produtos pedidos)
+**#numeroPedido**,**#codProduto** → quantidade(produtos pedidos)
 
-**#supermecadoID**,**#codProduto**→quantidade(produto em stock)
+**#supermecadoID**,**#codProduto** → quantidade(produto em stock)
 [< Previous](rebd02.md) | [^ Main](/../../) | [Next >](rebd04.md)
 :--- | :---: | ---: 
