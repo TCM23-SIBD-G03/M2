@@ -125,6 +125,8 @@ Stock(#supermecadoID → Supermecado*,#codProduto → Produto*,quantidade)
 |03|6789012345678|9|
 |06|1234567890123|6|
 
+Visto que não temos nenhum atributo que depende de outro atributo para além da chave primaria e nenhum atributo que depende de outro atributo e não da chaves primaria. Logo a nossa normalização está completa.
+
 
 
 
