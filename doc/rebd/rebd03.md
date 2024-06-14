@@ -61,7 +61,7 @@ Stock(#supermecadoID → Supermecado*,#codProduto → Produto*,quantidade)
 |12 | Nestle | nestle@example.com|    123456789 |  AB12345678901234567890123456789012|
 |34 |Unilever|     'unilever@example.com|    234567890   |   DE23456789012345678901234567890123|
 
-##Cliente
+#### Cliente
 
 | idCliente    | nifCliente               | telemovel      |nome  |morada |
 | :------- | :------------------------ | :---------- | :----------  | :--- |
