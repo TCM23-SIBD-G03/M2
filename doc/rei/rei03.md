@@ -3,7 +3,7 @@
 ## Modelo E/A
 
   
-![Modelo EA Supermecados](doc/rei/images/SupermecadoModelo_ER.png)   
+![Modelo EA Supermecados](https://raw.githubusercontent.com/TCM23-SIBD-G03/TCM23-SIBD-G03/main/doc/rei/images/SupermecadoModelo_ER.png)   
 
 ### **Entidades**:
   
