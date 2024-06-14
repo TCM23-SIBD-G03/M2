@@ -1,7 +1,7 @@
 # C2 : Esquema conceptual
 
 ## Modelo E/A
-![Modelo EA Supermecado](doc/rei/images/SupermecadoModelo_ER.png)     
+![Modelo EA Supermecado](https://raw.githubusercontent.com/TCM23-SIBD-G03/TCM23-SIBD-G03/main/doc/rei/images/SupermecadoModelo_ER.png)     
   [ModeloERSupermecado.Dia download ](doc/rei/images/SupermecadoModelo_ER)
 
 ## Regras de negócio adicionais (Restrições)
