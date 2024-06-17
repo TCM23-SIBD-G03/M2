@@ -37,9 +37,7 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
     
     -   Monitorar níveis de stock.
     -   Registar entrada e saída de produtos no inventário.
--   **Gerir Pessoal**:
-    
-    -   Adicionar, editar e remover operadores de caixa.
+
 
 #### 3. Operador de Caixa
 
@@ -51,17 +49,6 @@ A especificação detalhada dos tipos de utilizadores e suas respetivas funciona
     
     -   Consultar informações básicas de produtos.
 
-#### 4. Gerente de Compras
-
--   **Gerir fornecedores**:
-    
-    -   Adicionar, editar e remover fornecedores.
-    -   Consultar informações detalhadas de fornecedores (nif, morada,iban,contactos).
-    
--   **Criar e gerir os pedidos**:
-    
-    -   Registar novos pedidos de compra.
-    -   Gerar relatórios de pedidos realizados.
 
 
 [< Previous](rei01.md) | [^ Main](/../../) | [Next >](rei03.md)
