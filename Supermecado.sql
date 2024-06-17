@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `Tabela_Supermecado` (
   `morada` varchar(50)  NOT NULL  ,
     `empregadoID` int(9) NOT NULL ,
   PRIMARY KEY (`supermecadoID`),
- FOREIGN KEY (`Tabela_Empregado`) REFERENCES `Tabela_Empregado`(`empregadoID`)
+ FOREIGN KEY (`empregadoID`) REFERENCES `Tabela_Empregado`(`empregadoID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 
@@ -32,10 +32,10 @@ CREATE TABLE IF NOT EXISTS `Tabela_Empregado` (
  `salario` int(4)  unsigned NOT NULL,
    `cargo` varchar(10) NOT NULL,
 	`horasServico` int (3) NOT NULL,
-	`supermecadoID` int (2) NOT NULL,
+	 int (2) NOT NULL,
  CHECK (sexo IN ('F', 'M')),
   PRIMARY KEY (`empregadoID`),
-  FOREIGN KEY (`Tabela_Supermecado`) REFERENCES `Tabela_Supermecado`(`supermecadoID`)
+  FOREIGN KEY (`supermecadoID`) REFERENCES `Tabela_Supermecado`(`supermecadoID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 
@@ -70,8 +70,8 @@ CREATE TABLE IF NOT EXISTS `Tabela_Pedido` (
    `idFornecedor`int(9) unsigned NOT NULL,
    `supermecadoID`int(2) unsigned NOT NULL,
   PRIMARY KEY (`numeroPedido`),
-   FOREIGN KEY (`Tabela_Fornecedor`) REFERENCES `Tabela_Fornecedor`(`idFornecedor`),
-  FOREIGN KEY (`Tabela_Supermecado`) REFERENCES `Tabela_Supermecado`(`supermecadoID`)
+   FOREIGN KEY (`idFornecedor`) REFERENCES `Tabela_Fornecedor`(`idFornecedor`),
+  FOREIGN KEY (`supermecadoID`) REFERENCES `Tabela_Supermecado`(`supermecadoID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS `Tabela_Compra` (
   `idCliente`int(9) unsigned NOT NULL,
    `supermecadoID`int(2) unsigned NOT NULL,
   PRIMARY KEY (`idCliente`),
-  FOREIGN KEY (`Tabela_Cliente`) REFERENCES `Tabela_Cliente`(`idCliente`),
-  FOREIGN KEY (`Tabela_Supermecado`) REFERENCES `Tabela_Supermecado`(`supermecadoID`)
+  FOREIGN KEY (`idCliente`) REFERENCES `Tabela_Cliente`(`idCliente`),
+  FOREIGN KEY ( `supermecadoID`) REFERENCES `Tabela_Supermecado`(`supermecadoID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 
@@ -91,9 +91,10 @@ CREATE TABLE IF NOT EXISTS `Tabela_FornecedordoProduto` (
    `idFornecedor` int(2) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
     `precoFornecedor` decimal(2) unsigned NOT NULL ,
-  FOREIGN KEY (`Tabela_Fornecedor`) REFERENCES `Tabela_Fornecedor`(`idFornecedor`),
-   FOREIGN KEY (`Tabela_Produto`) REFERENCES `Tabela_Produto`(`codProduto`),
- PRIMARY KEY ( `idFornecedor`,`codProduto`)
+  
+ PRIMARY KEY (  `idFornecedor`,`codProduto`)
+	FOREIGN KEY ( `idFornecedor`) REFERENCES `Tabela_Fornecedor`(`idFornecedor`),
+   FOREIGN KEY (`codProduto`) REFERENCES `Tabela_Produto`(`codProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 CREATE TABLE IF NOT EXISTS `Tabela_ListaDaCompra` (
@@ -101,27 +102,28 @@ CREATE TABLE IF NOT EXISTS `Tabela_ListaDaCompra` (
    `codProduto` int(13) unsigned NOT NULL ,
     `quantidade` int(3) unsigned NOT NULL ,
      `precoProdutos` decimal(2) unsigned NOT NULL ,
-    FOREIGN KEY (`Tabela_Produto`) REFERENCES `Tabela_Produto`(`codProduto`),
-      FOREIGN KEY (`Tabela_Compra`) REFERENCES `Tabela_Compra`(`numeroCompra`),
-  PRIMARY KEY (  `numeroCompra`,`codProduto`)
+  PRIMARY KEY (  `numeroCompra`,`codProduto`),
+	FOREIGN KEY (`codProduto`) REFERENCES `Tabela_Produto`(`codProduto`),
+      FOREIGN KEY (`numeroCompra`) REFERENCES `Tabela_Compra`(`numeroCompra`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 CREATE TABLE IF NOT EXISTS `Tabela_ListaProdutosPedido` (
    `numeroPedido` int(9) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
     `quantidade` int(3) unsigned NOT NULL ,
- FOREIGN KEY (`Tabela_Produto`) REFERENCES `Tabela_Produto`(`codProduto`),
- FOREIGN KEY (`Tabela_Pedido`) REFERENCES `Tabela_Pedido`(`numeroPedido`),
  PRIMARY KEY (  `numeroPedido`,`codProduto`)
+	 FOREIGN KEY (`codProduto`) REFERENCES `Tabela_Produto`(`codProduto`),
+ FOREIGN KEY ( `numeroPedido`) REFERENCES `Tabela_Pedido`(`numeroPedido`),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 CREATE TABLE IF NOT EXISTS `Tabela_Stock` (
    `supermecadoID` int(2) unsigned NOT NULL ,
    `codProduto` int(13) unsigned NOT NULL ,
     `quantidade` int(3) unsigned NOT NULL ,
- FOREIGN KEY (`Tabela_Produto`) REFERENCES `Tabela_Produto`(`codProduto`),
- FOREIGN KEY (`Tabela_Supermecado`) REFERENCES `Tabela_Supermecado`(`supermecadoID`),
- PRIMARY KEY (  `numeroPedido`,`codProduto`)
+
+ PRIMARY KEY (  `numeroPedido`,`codProduto`),
+	 FOREIGN KEY (   `codProduto`) REFERENCES `Tabela_Produto`(`codProduto`),
+ FOREIGN KEY ( `supermecadoID`) REFERENCES `Tabela_Supermecado`(`supermecadoID`),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 INSERT INTO `Tabela_Supermecado` (`supermecadoID`, `morada`,`empregadoID`) VALUES
@@ -133,7 +135,7 @@ INSERT INTO `Tabela_Supermecado` (`supermecadoID`, `morada`,`empregadoID`) VALUE
 (05,'303Cedar',006),
 (10,'05Chestnu',016);
 
-INSERT INTO `Tabela_Empregado` (`empregadoID`,`nome`, `sexo`,`dataNascimento`,`morada`,`telemovel`,`salario`,`cargo`,`horas`,`supermecadoID`) VALUES
+INSERT INTO `Tabela_Empregado` (`empregadoID`,`nome`, `sexo`,`dataNascimento`,`morada`,`telemovel`,`salario`,`cargo`,`horasServico`,`supermecadoID`) VALUES
 (001 ,'JohnDoe'  ,     'M'	,1985-06-15 ,   '123ElmSt',954343215,700,'caixa' ,20,03),
 (002 ,'JaneSmith' ,    'F'	,1990-04-22  ,  '456OakSt',982164234,1000,'gerente',  22,10),
 (003 ,'AlanBrown'  ,   'M'	,1987-08-10   , '789PineSt',90123458,700,'caixa',    18,11),
